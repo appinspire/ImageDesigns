@@ -1,9 +1,16 @@
 <resources>
     <string name="app_name">Mehandi Designs</string>
-    <string name="admob_app_id">ca-app-pub-8567160823440243~6793330292</string>
-    <string name="admob_app_id_test">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="admob_banner_id">ca-app-pub-8567160823440243/3873978323</string>
-    <string name="admob_interstitial">ca-app-pub-8567160823440243/6852986140</string>
+    <!--real ad ids-->
+    <!--<string name="admob_app_id">ca-app-pub-8567160823440243~6793330292</string>-->
+    <!--<string name="admob_banner_id">ca-app-pub-8567160823440243/3873978323</string>-->
+    <!--<string name="admob_interstitial">ca-app-pub-8567160823440243/6852986140</string>-->
+    <!--test ad ids-->
+    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="admob_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_interstitial">ca-app-pub-3940256099942544/1033173712</string>
+
+
+
     <string name="splash_text">Simple Mehandi Designs</string>
     <string name="msg_exit">Are you sure you want to exit?</string>
     <string name="button_cancel">Cancel</string>

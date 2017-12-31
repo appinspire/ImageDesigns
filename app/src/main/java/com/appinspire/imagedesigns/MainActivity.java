@@ -3,13 +3,17 @@ package com.appinspire.imagedesigns;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
 public class MainActivity extends AppCompatActivity {
 
+    AdView mAdView;
     private InterstitialAd mInterstitialAd;
     private final int REFRESH_TIME_SECONDS = 1 * 1000;
     private Handler mHandler;
@@ -39,6 +43,16 @@ public class MainActivity extends AppCompatActivity {
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
         mHandler = new Handler();
         mHandler.postDelayed(mRunnableStart, 2000);
+        mAdView = (AdView) findViewById(R.id.adView_main);
+        mAdView.setVisibility(View.GONE);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+        mAdView.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                mAdView.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
     @Override

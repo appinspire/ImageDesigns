@@ -5,6 +5,7 @@
     <color name="colorAccent">#ff7d47</color>
     <color name="colorSimpleDialogTitleText">#FFFFFF</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorLightGrey">#eae4e4</color>
     <color name="galleryBg">#757575</color>
     <color name="galleryItemOverlay">#cc000000</color>
     <color name="colorMainBg">#757575</color>
