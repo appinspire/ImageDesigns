@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#e64a19</color>
+    <color name="colorPrimaryDark">#ac0800</color>
+    <color name="colorAccent">#ff7d47</color>
+    <color name="colorSimpleDialogTitleText">#FFFFFF</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="galleryBg">#757575</color>
+    <color name="galleryItemOverlay">#cc000000</color>
+    <color name="colorMainBg">#757575</color>
+    <color name="galleryCurrentItemOverlay">@android:color/transparent</color>
+</resources>

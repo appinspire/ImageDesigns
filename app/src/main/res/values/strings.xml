@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Mehandi Designs</string>
+    <string name="admob_app_id">ca-app-pub-8567160823440243~6793330292</string>
+    <string name="admob_app_id_test">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="admob_banner_id">ca-app-pub-8567160823440243/3873978323</string>
+    <string name="admob_interstitial">ca-app-pub-8567160823440243/6852986140</string>
+    <string name="splash_text">Simple Mehandi Designs</string>
+    <string name="msg_exit">Are you sure you want to exit?</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_confirm">Confirm</string>
+    <string name="button_ok">OK</string>
+    <string name="company"><b>A P P   I N S P I R E</b></string>
+</resources>
