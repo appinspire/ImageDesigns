@@ -25,6 +25,8 @@
                 android:layout_marginTop="@dimen/spacing_medium"
                 android:layout_marginStart="@dimen/spacing_medium"
                 android:layout_marginEnd="@dimen/spacing_medium"
+                android:clickable="true"
+                android:id="@+id/designs"
                 android:layout_height="200dp">
                 <LinearLayout
                     android:orientation="vertical"
@@ -58,6 +60,8 @@
                 <android.support.v7.widget.CardView
                     android:layout_width="0dp"
                     android:layout_weight="1"
+                    android:clickable="true"
+                    android:id="@+id/share_app"
                     android:layout_marginEnd="@dimen/spacing_small"
                     android:layout_height="135dp">
 
@@ -101,6 +105,8 @@
                 <android.support.v7.widget.CardView
                     android:layout_width="0dp"
                     android:layout_weight="1"
+                    android:clickable="true"
+                    android:id="@+id/rate_app"
                     android:layout_marginStart="@dimen/spacing_small"
                     android:layout_height="135dp">
 
@@ -153,6 +159,8 @@
                 <android.support.v7.widget.CardView
                     android:layout_width="0dp"
                     android:layout_weight="1"
+                    android:clickable="true"
+                    android:id="@+id/more_apps"
                     android:layout_marginEnd="@dimen/spacing_small"
                     android:layout_height="135dp">
 
@@ -197,6 +205,8 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_marginStart="@dimen/spacing_small"
+                    android:clickable="true"
+                    android:id="@+id/about_us"
                     android:layout_height="135dp">
 
                     <android.support.constraint.ConstraintLayout
@@ -249,7 +259,9 @@
                 <android.support.v7.widget.CardView
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="175dp">
+                    android:clickable="true"
+                    android:id="@+id/more_prods"
+                    android:layout_height="135dp">
 
                     <android.support.constraint.ConstraintLayout
                         android:layout_width="match_parent"

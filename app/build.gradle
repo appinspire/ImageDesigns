@@ -32,4 +32,6 @@ dependencies {
     compile "com.android.support:design:$supportLib"
     compile "com.android.support:support-v4:$supportLib"
     compile 'com.google.android.gms:play-services-ads:11.6.0'
+    compile 'com.github.stfalcon:frescoimageviewer:0.5.0'
+    compile "com.facebook.fresco:fresco:1.2.0"
 }
