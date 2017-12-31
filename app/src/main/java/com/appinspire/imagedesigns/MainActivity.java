@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.more_prods:
+                startActivity(new Intent(this,AdActivity.class));
                 break;
             case R.id.rate_app:
                 try {
