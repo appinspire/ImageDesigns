@@ -14,6 +14,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
+import com.kobakei.ratethisapp.RateThisApp;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -76,6 +77,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rate_app_card.setOnClickListener(this);
         about_us_card.setOnClickListener(this);
         Fresco.initialize(getApplicationContext());
+        RateThisApp.onCreate(this);
+        // If the condition is satisfied, "Rate this app" dialog will be shown
+        RateThisApp.Config config = new RateThisApp.Config(2, 2);
+        RateThisApp.init(config);
+        RateThisApp.showRateDialogIfNeeded(this);
     }
 
     @Override
