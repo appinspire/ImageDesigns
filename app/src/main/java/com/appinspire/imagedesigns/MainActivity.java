@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 
+import com.appinspire.imagedesigns.dialog.SimpleDialog;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CardView about_us_card;
     CardView more_prods_card;
     CardView designs_card;
+    SimpleDialog mSimpleDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +84,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         RateThisApp.Config config = new RateThisApp.Config(2, 2);
         RateThisApp.init(config);
         RateThisApp.showRateDialogIfNeeded(this);
+        showSimpleDialog("Disclaimer",getString(R.string.disclaimer));
+    }
+
+    private void showSimpleDialog(String title, String content) {
+        mSimpleDialog = new SimpleDialog(this, title, content,null,"Ok"
+                , new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()) {
+                    case R.id.button_positive:
+                        mSimpleDialog.dismiss();
+                        break;
+                    case R.id.button_negative:
+                        mSimpleDialog.dismiss();
+                        break;
+                }
+            }
+        });
+        mSimpleDialog.show();
     }
 
     @Override
@@ -116,6 +137,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.about_us:
+                showSimpleDialog("About",getString(R.string.about_us));
                 break;
             case R.id.share_app:
                 try {

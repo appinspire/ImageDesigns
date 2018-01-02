@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#e64a19</color>
-    <color name="colorPrimaryDark">#ac0800</color>
-    <color name="colorAccent">#ff7d47</color>
+    <color name="colorPrimary">#ff8a65</color>
+    <color name="colorPrimaryDark">#c75b39</color>
+    <color name="colorAccent">#ffbb93</color>
     <color name="colorSimpleDialogTitleText">#FFFFFF</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorLightGrey">#eae4e4</color>
@@ -10,4 +10,6 @@
     <color name="galleryItemOverlay">#cc000000</color>
     <color name="colorMainBg">#757575</color>
     <color name="galleryCurrentItemOverlay">@android:color/transparent</color>
+    <color name="colorSimpleDialogText">#002256</color>
+    <color name="colorDialogToolbar">@color/colorPrimaryDark</color>
 </resources>

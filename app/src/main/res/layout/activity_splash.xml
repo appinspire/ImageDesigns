@@ -31,7 +31,7 @@
         android:layout_marginEnd="@dimen/spacing_medium"
         android:layout_marginStart="@dimen/spacing_medium"
         app:layout_constraintVertical_chainStyle="packed"
-        android:text="@string/splash_text"
+        android:text="@string/app_name"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
