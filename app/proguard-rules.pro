@@ -19,3 +19,12 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-dontwarn javax.annotation.concurrent.GuardedBy
+-dontwarn javax.annotation.Nullable
+-dontwarn javax.annotation.concurrent.Immutable
+-dontwarn javax.annotation.concurrent.ThreadSafe
+-dontwarn javax.annotation.CheckReturnValue
+-dontwarn javax.annotation.concurrent.NotThreadSafe
+-dontwarn javax.annotation.Nonnull
+-dontwarn com.facebook.infer.annotation.Functional
+-dontwarn com.facebook.infer.annotation.ReturnsOwnership

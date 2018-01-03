@@ -7,8 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.appinspire.imagedesigns.dialog.SimpleDialog;
+import com.appinspire.imagedesigns.utils.Constants;
+import com.appinspire.imagedesigns.utils.PrefUtils;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -44,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CardView more_apps_card;
     CardView about_us_card;
     CardView more_prods_card;
+    ImageView more_prods,copyrights;
+    TextView more_prods_text;
     CardView designs_card;
     SimpleDialog mSimpleDialog;
     @Override
@@ -72,18 +78,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         more_prods_card = (CardView) findViewById(R.id.more_prods);
         rate_app_card = (CardView) findViewById(R.id.rate_app);
         about_us_card = (CardView) findViewById(R.id.about_us);
+        more_prods = (ImageView) findViewById(R.id.imageView5);
+        more_prods_text = (TextView) findViewById(R.id.textView5);
+        copyrights = (ImageView) findViewById(R.id.imageView7);
         designs_card.setOnClickListener(this);
         share_app_card.setOnClickListener(this);
         more_apps_card.setOnClickListener(this);
-        more_prods_card.setOnClickListener(this);
         rate_app_card.setOnClickListener(this);
         about_us_card.setOnClickListener(this);
+        more_prods.setOnClickListener(this);
+        copyrights.setOnClickListener(this);
+        more_prods_text.setOnClickListener(this);
         Fresco.initialize(getApplicationContext());
         RateThisApp.onCreate(this);
         // If the condition is satisfied, "Rate this app" dialog will be shown
         RateThisApp.Config config = new RateThisApp.Config(2, 2);
         RateThisApp.init(config);
         RateThisApp.showRateDialogIfNeeded(this);
+        if(!PrefUtils.getBoolean(this, Constants.FIRST_RUN,false)){
+            showDisclaimer();
+            PrefUtils.persistBoolean(this,Constants.FIRST_RUN,true);
+        }
+    }
+    public void showDisclaimer(){
         showSimpleDialog("Disclaimer",getString(R.string.disclaimer));
     }
 
@@ -124,8 +141,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             Uri.parse("http://play.google.com/store/search?q=pub:AppInspire")));
                 }
                 break;
-            case R.id.more_prods:
+            case R.id.imageView5:
                 startActivity(new Intent(this,AdActivity.class));
+                break;
+            case R.id.textView5:
+                startActivity(new Intent(this,AdActivity.class));
+                break;
+            case R.id.imageView7:
+                showDisclaimer();
                 break;
             case R.id.rate_app:
                 try {
