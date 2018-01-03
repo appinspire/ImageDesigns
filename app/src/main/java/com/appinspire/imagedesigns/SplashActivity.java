@@ -22,7 +22,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         mHandler = new Handler();
-        mHandler.postDelayed(mRunnable, 2000);
+        mHandler.postDelayed(mRunnable, 1000);
 
     }
 
