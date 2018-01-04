@@ -17,14 +17,12 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.kobakei.ratethisapp.RateThisApp;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     AdView mAdView;
-    private final int REFRESH_TIME_SECONDS = 1 * 1000;
     private Handler mHandler;
     private Runnable mRunnableStart = new Runnable() {
         @Override

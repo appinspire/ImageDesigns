@@ -3,6 +3,7 @@ package com.appinspire.imagedesigns;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -40,7 +41,10 @@ public class AdActivity extends AppCompatActivity {
 //        html += "</body></html>";
 ////        webView.loadData( html, "text/html", null);
         webView.loadUrl(src);
-        webView.setInitialScale(350);
+        webView.setInitialScale(AppUtils.dpToPx(200));
 
+    }
+    public void onclick(View view){
+        finish();
     }
 }
