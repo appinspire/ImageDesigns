@@ -29,19 +29,14 @@ public class AdActivity extends AppCompatActivity {
 //        webView.getSettings().setAllowFileAccess(true);
 //        webView.setWebViewClient(new WebViewClient());
 
-//        String data_html = "<!DOCTYPE html><html> <head> <meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"target-densitydpi=high-dpi\" /> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <link rel=\"stylesheet\" media=\"screen and (-webkit-device-pixel-ratio:1.5)\" href=\"hdpi.css\" /></head> <body style=\"background:black;margin:0 0 0 0; padding:0 0 0 0;\"> <iframe style=\"background:black;\" width=' "+width+"' height='"+height+"'  src=\"//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=mobstudioapps-20&marketplace=amazon&region=US&placement=B071KW9GTT&asins=B071KW9GTT&linkId=d84a893a64c95748cd1c22971b230c3f&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff\">\n" +
-//                "    </iframe> </body> </html> ";
-        String src = "http://ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=mobstudioapps-20&marketplace=amazon&region=US&placement=B071KW9GTT&asins=B071KW9GTT&linkId=d84a893a64c95748cd1c22971b230c3f&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff";
-
-//        String html = "";
-//        html += "<html><body>";
-//        html += "<iframe width=\""+width+"\" height=\""+height+"\" " +
-//                "src="+src+
-//                "</iframe>";
-//        html += "</body></html>";
-////        webView.loadData( html, "text/html", null);
-        webView.loadUrl(src);
-        webView.setInitialScale(AppUtils.dpToPx(200));
+        String html = "";
+        html += "<html><body>";
+        html += "<a href=\"http://s.click.aliexpress.com/e/BUjeuJQ?bz=320*480\" target=\"_parent\"><img width=\"320\" height=\"480\" src=\"https://ae01.alicdn.com/kf/HTB1dPhvKpXXXXXpXpXXq6xXFXXXe/100g-Dried-Rose-Petals-Bath-Tools-Natural-Dry-Flower-Petal-Spa-Whitening-Shower-Aromatherapy-Bathing-Beauty.jpg_220x220.jpg\"/></a>";
+        html += "</body></html>";
+        webView.loadData( html, "text/html", null);
+//        webView.loadUrl(src);
+        webView.setInitialScale(AppUtils.dpToPx(120));
+//        webView.setInitialScale(1);
 
     }
     public void onclick(View view){
