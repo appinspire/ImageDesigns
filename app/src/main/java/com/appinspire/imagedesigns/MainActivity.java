@@ -1,5 +1,6 @@
 package com.appinspire.imagedesigns;
 
+import android.app.ActivityManager;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
@@ -14,6 +15,7 @@ import com.appinspire.imagedesigns.dialog.SimpleDialog;
 import com.appinspire.imagedesigns.utils.Constants;
 import com.appinspire.imagedesigns.utils.PrefUtils;
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -79,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         more_prods.setOnClickListener(this);
         copyrights.setOnClickListener(this);
         more_prods_text.setOnClickListener(this);
-        Fresco.initialize(getApplicationContext());
+        initFresco();
         RateThisApp.onCreate(this);
         // If the condition is satisfied, "Rate this app" dialog will be shown
         RateThisApp.Config config = new RateThisApp.Config(2, 2);
@@ -89,6 +91,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             showDisclaimer();
             PrefUtils.persistBoolean(this,Constants.FIRST_RUN,true);
         }
+    }
+    private void initFresco() {
+        ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+        ImagePipelineConfig imagePipelineConfig = ImagePipelineConfig
+                .newBuilder(getApplicationContext())
+                .setBitmapMemoryCacheParamsSupplier(new LollipopBitmapMemoryCacheParamsSupplier(activityManager))
+                .build();
+
+        Fresco.initialize(getApplicationContext(), imagePipelineConfig);
     }
     public void showDisclaimer(){
         showSimpleDialog("Disclaimer",getString(R.string.disclaimer));
