@@ -136,10 +136,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.more_apps:
                 try {
                     startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("market://search?q=pub:AppInspire")));
+                            Uri.parse("market://search?q=pub:Mob Studios")));
                 } catch (android.content.ActivityNotFoundException e) {
                     startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("http://play.google.com/store/search?q=pub:AppInspire")));
+                            Uri.parse("http://play.google.com/store/search?q=pub:Mob Studios")));
                 }
                 break;
             case R.id.imageView5:
