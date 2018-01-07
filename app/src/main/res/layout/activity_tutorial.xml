@@ -24,7 +24,7 @@
     </WebView>
     <Button
         android:id="@+id/more_btn"
-        android:text="More Designs"
+        android:text="More Apps with more designs"
         android:layout_width="0dp"
         android:onClick="onclick"
         android:background="@color/colorPrimary"
