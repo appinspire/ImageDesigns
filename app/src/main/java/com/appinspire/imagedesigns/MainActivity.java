@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.about_us:
-                showSimpleDialog("About",getString(R.string.about_us));
+                startActivity(new Intent(this,TutorialActivity.class));
                 break;
             case R.id.share_app:
                 try {
