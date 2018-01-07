@@ -14,7 +14,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/adView_tutorial"
+        app:layout_constraintBottom_toTopOf="@+id/more_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,6 +22,19 @@
         app:layout_constraintVertical_bias="1.0">
 
     </WebView>
+    <Button
+        android:id="@+id/more_btn"
+        android:text="More Designs"
+        android:layout_width="0dp"
+        android:onClick="onclick"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/adView_tutorial"
+        app:layout_constraintTop_toBottomOf="@+id/webview1"
+        android:layout_marginStart="@dimen/spacing_medium"
+        android:layout_marginEnd="@dimen/spacing_medium"
+        android:layout_height="wrap_content" />
 
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView_tutorial"
@@ -30,7 +43,7 @@
         ads:adSize="BANNER"
         ads:adUnitId="@string/admob_banner_id"
         ads:layout_constraintHorizontal_bias="0.5"
-        ads:layout_constraintTop_toBottomOf="@+id/webview1"
+        ads:layout_constraintTop_toBottomOf="@+id/more_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">

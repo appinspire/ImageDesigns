@@ -1,5 +1,7 @@
 package com.appinspire.imagedesigns;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
@@ -50,7 +52,7 @@ public class TutorialActivity extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
         webView.loadData(frameVideo, "text/html", "utf-8");
         mAdView = (AdView) findViewById(R.id.adView_tutorial);
-        mAdView.setVisibility(View.GONE);
+        mAdView.setVisibility(View.INVISIBLE);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
         mAdView.setAdListener(new AdListener(){
@@ -60,6 +62,16 @@ public class TutorialActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+    public void onclick(View view){
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("market://search?q=pub:Mob Studios")));
+        } catch (android.content.ActivityNotFoundException e) {
+            startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("http://play.google.com/store/search?q=pub:Mob Studios")));
+        }
 
     }
 }
