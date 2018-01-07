@@ -17,10 +17,7 @@
     <string name="button_ok">OK</string>
     <string name="company"><b>A P P   I N S P I R E</b></string>
 
-    <string name="disclaimer"><p>We do not own the content provided in this app, it is available online for free</p><p>
-        This app is just organized way to see the particular content.
-    </p><p>
-        We do not claim copyrights of any content provided in this app, all content is the copyright of their respective owners.
-    </p></string>
+    <string name="disclaimer">We do not claim copyrights of any content provided in this app, all content is the copyright of their respective owners. No copyright infringement is intended, you can contact us on mobstudios.tech@gmail.com , If the content belongs to you and you want it to be removed. We value your creation.
+Cheers!</string>
     <string name="about_us">About us ddnkasndkaj dasjdaskd djlasd jdsak asdjasjd asdjj</string>
 </resources>
