@@ -8,6 +8,7 @@ import android.view.View;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.stfalcon.frescoimageviewer.ImageViewer;
 
 public class ImagesActivity extends AppCompatActivity {
@@ -31,6 +32,7 @@ public class ImagesActivity extends AppCompatActivity {
         }
     };
 
+    private FirebaseAnalytics mFirebaseAnalytics;
     private static final int[] ids = new int[]{
             R.id.image_1,
             R.id.image_2,
@@ -85,6 +87,10 @@ public class ImagesActivity extends AppCompatActivity {
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId(getString(R.string.admob_interstitial));
         mHandler = new Handler();
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "ImageActivity");
+        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
     }
     protected void showPicker(int startPosition) {
 

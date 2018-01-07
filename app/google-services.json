@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "228786312667",
+    "firebase_url": "https://imagedesigns-6617d.firebaseio.com",
+    "project_id": "imagedesigns-6617d",
+    "storage_bucket": "imagedesigns-6617d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228786312667:android:92bb7e7dd50596f7",
+        "android_client_info": {
+          "package_name": "com.appinspire.imagedesigns"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "228786312667-thsl3k9m0cht6ip0o3p97k77j9fbvfiv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfcsJZeRz2t8PgSfSVcShhXO_67gbiS_U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

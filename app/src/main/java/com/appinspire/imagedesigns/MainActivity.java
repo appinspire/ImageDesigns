@@ -20,10 +20,12 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.kobakei.ratethisapp.RateThisApp;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
+    private FirebaseAnalytics mFirebaseAnalytics;
     AdView mAdView;
     private Handler mHandler;
     private Runnable mRunnableStart = new Runnable() {
@@ -91,6 +93,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             showDisclaimer();
             PrefUtils.persistBoolean(this,Constants.FIRST_RUN,true);
         }
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "MainActivity");
+        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
     }
     private void initFresco() {
         ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
