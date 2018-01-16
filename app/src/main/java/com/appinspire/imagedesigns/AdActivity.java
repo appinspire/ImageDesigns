@@ -46,7 +46,7 @@ public class AdActivity extends AppCompatActivity {
         webView.setVerticalScrollBarEnabled(false);
         webView.setHorizontalScrollBarEnabled(false);
         Random r = new Random();
-        int random = r.nextInt(40);
+        int random = r.nextInt(51);
         Products product = Products.getProducts()[random];
         String clickaddress = product.click_link;
         String imageaddress= product.image_link;

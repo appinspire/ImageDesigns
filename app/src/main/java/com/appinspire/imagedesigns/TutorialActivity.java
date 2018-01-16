@@ -1,5 +1,7 @@
 package com.appinspire.imagedesigns;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
@@ -36,9 +38,9 @@ public class TutorialActivity extends AppCompatActivity {
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
         DisplayMetrics metrics = getResources().getDisplayMetrics();
         int w1 = (int) (metrics.widthPixels / metrics.density), h1 = w1 * 3 / 5;
-        String frameVideo = "<html><body>Easy Mehandi design Tutorials<br>" +
-                "<iframe width=\""+w1+"\" height=\""+h1+"\" src=\"https://www.youtube.com/embed/D7hxRbQCmK8\" frameborder=\"0\" allowfullscreen></iframe><hr></hr>" +
-                "<iframe width=\""+w1+"\" height=\""+h1+"\" src=\"https://www.youtube.com/embed/JMtrysCElDs\" frameborder=\"0\" allowfullscreen></iframe>" +
+        String frameVideo = "<html><body>Easy Mehandi design Tutorials Coming soon<br>" +
+//                "<iframe width=\""+w1+"\" height=\""+h1+"\" src=\"https://www.youtube.com/embed/D7hxRbQCmK8\" frameborder=\"0\" allowfullscreen></iframe><hr></hr>" +
+//                "<iframe width=\""+w1+"\" height=\""+h1+"\" src=\"https://www.youtube.com/embed/JMtrysCElDs\" frameborder=\"0\" allowfullscreen></iframe>" +
                 "</body></html>";
         webView.setWebViewClient(new WebViewClient() {
             @Override
@@ -50,7 +52,7 @@ public class TutorialActivity extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
         webView.loadData(frameVideo, "text/html", "utf-8");
         mAdView = (AdView) findViewById(R.id.adView_tutorial);
-        mAdView.setVisibility(View.GONE);
+        mAdView.setVisibility(View.INVISIBLE);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
         mAdView.setAdListener(new AdListener(){
@@ -60,6 +62,16 @@ public class TutorialActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+    public void onclick(View view){
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("market://search?q=pub:Mob Studios")));
+        } catch (android.content.ActivityNotFoundException e) {
+            startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("http://play.google.com/store/search?q=pub:Mob Studios")));
+        }
 
     }
 }
