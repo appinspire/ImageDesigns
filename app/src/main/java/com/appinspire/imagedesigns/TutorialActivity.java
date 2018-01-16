@@ -38,9 +38,9 @@ public class TutorialActivity extends AppCompatActivity {
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
         DisplayMetrics metrics = getResources().getDisplayMetrics();
         int w1 = (int) (metrics.widthPixels / metrics.density), h1 = w1 * 3 / 5;
-        String frameVideo = "<html><body>Easy Mehandi design Tutorials<br>" +
-                "<iframe width=\""+w1+"\" height=\""+h1+"\" src=\"https://www.youtube.com/embed/D7hxRbQCmK8\" frameborder=\"0\" allowfullscreen></iframe><hr></hr>" +
-                "<iframe width=\""+w1+"\" height=\""+h1+"\" src=\"https://www.youtube.com/embed/JMtrysCElDs\" frameborder=\"0\" allowfullscreen></iframe>" +
+        String frameVideo = "<html><body>Easy Mehandi design Tutorials Coming soon<br>" +
+//                "<iframe width=\""+w1+"\" height=\""+h1+"\" src=\"https://www.youtube.com/embed/D7hxRbQCmK8\" frameborder=\"0\" allowfullscreen></iframe><hr></hr>" +
+//                "<iframe width=\""+w1+"\" height=\""+h1+"\" src=\"https://www.youtube.com/embed/JMtrysCElDs\" frameborder=\"0\" allowfullscreen></iframe>" +
                 "</body></html>";
         webView.setWebViewClient(new WebViewClient() {
             @Override
