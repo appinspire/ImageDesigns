@@ -12,8 +12,7 @@ public final class Demo {
         throw new AssertionError();
     }
 
-//    private static final String POSTERS_PATH = "https://raw.githubusercontent.com/stfalcon-studio/FrescoImageViewer/v.0.5.0/images/posters";
-    private static final String POSTERS_PATH = "https://s3.ap-northeast-2.amazonaws.com/imagegallery/EasyMehandi";
+    private static final String POSTERS_PATH = "https://s3.ap-northeast-2.amazonaws.com/imagegallery/FancyMehandi";
 
     public static String[] getPosters() {
         return new String[]{
