@@ -67,6 +67,37 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228786312667:android:2cf1a4ad467fd52b",
+        "android_client_info": {
+          "package_name": "com.appinspire.arabicmehandidesigns"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "228786312667-thsl3k9m0cht6ip0o3p97k77j9fbvfiv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfcsJZeRz2t8PgSfSVcShhXO_67gbiS_U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"
