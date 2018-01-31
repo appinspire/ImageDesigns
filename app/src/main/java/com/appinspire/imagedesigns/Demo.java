@@ -12,7 +12,7 @@ public final class Demo {
         throw new AssertionError();
     }
 
-    private static final String POSTERS_PATH = "https://s3.ap-northeast-2.amazonaws.com/imagegallery/FancyMehandi";
+    private static final String POSTERS_PATH = "https://s3.ap-northeast-2.amazonaws.com/imagegallery/FingerMehandi";
 
     public static String[] getPosters() {
         return new String[]{
@@ -54,10 +54,7 @@ public final class Demo {
                 POSTERS_PATH + "/design36.jpg",
                 POSTERS_PATH + "/design37.jpg",
                 POSTERS_PATH + "/design38.jpg",
-                POSTERS_PATH + "/design39.jpg",
-                POSTERS_PATH + "/design40.jpg",
-                POSTERS_PATH + "/design41.jpg",
-                POSTERS_PATH + "/design42.jpg"
+                POSTERS_PATH + "/design39.jpg"
         };
 
     }

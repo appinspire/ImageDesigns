@@ -377,33 +377,6 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal">
-
-                <com.facebook.drawee.view.SimpleDraweeView
-                    android:id="@+id/image_40"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/placeholder" />
-
-                <com.facebook.drawee.view.SimpleDraweeView
-                    android:id="@+id/image_41"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/placeholder" />
-
-                <com.facebook.drawee.view.SimpleDraweeView
-                    android:id="@+id/image_42"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/placeholder" />
-
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
