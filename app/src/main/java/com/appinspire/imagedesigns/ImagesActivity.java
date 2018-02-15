@@ -6,13 +6,25 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.stfalcon.frescoimageviewer.ImageViewer;
 
 public class ImagesActivity extends AppCompatActivity {
     private InterstitialAd mInterstitialAd;
+    AdView mAdView;
+    AdView mAdView1;
+    AdView mAdView2;
+    AdView mAdView3;
+    AdView mAdView4;
+    AdView mAdView5;
+    AdView mAdView6;
+    AdView mAdView7;
+    AdView mAdView8;
+    AdView mAdView9;
     private final int REFRESH_TIME_SECONDS = 1 * 1000;
     private Handler mHandler;
     private Runnable mRunnableStart = new Runnable() {
@@ -91,6 +103,108 @@ public class ImagesActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "ImageActivity");
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+        mAdView = (AdView) findViewById(R.id.adView);
+        mAdView.setVisibility(View.GONE);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+        mAdView.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                mAdView.setVisibility(View.VISIBLE);
+            }
+        });
+
+        mAdView1 = (AdView) findViewById(R.id.adView_1);
+        mAdView2 = (AdView) findViewById(R.id.adView_2);
+        mAdView3 = (AdView) findViewById(R.id.adView_3);
+        mAdView4 = (AdView) findViewById(R.id.adView_4);
+        mAdView5 = (AdView) findViewById(R.id.adView_5);
+        mAdView6 = (AdView) findViewById(R.id.adView_6);
+        mAdView7 = (AdView) findViewById(R.id.adView_7);
+        mAdView8 = (AdView) findViewById(R.id.adView_8);
+        mAdView9 = (AdView) findViewById(R.id.adView_9);
+        mAdView1.setVisibility(View.GONE);
+        mAdView2.setVisibility(View.GONE);
+        mAdView3.setVisibility(View.GONE);
+        mAdView4.setVisibility(View.GONE);
+        mAdView5.setVisibility(View.GONE);
+        mAdView6.setVisibility(View.GONE);
+        mAdView7.setVisibility(View.GONE);
+        mAdView8.setVisibility(View.GONE);
+        mAdView9.setVisibility(View.GONE);
+        AdRequest adRequest1 = new AdRequest.Builder().build();
+        AdRequest adRequest2 = new AdRequest.Builder().build();
+        AdRequest adRequest3 = new AdRequest.Builder().build();
+        AdRequest adRequest4 = new AdRequest.Builder().build();
+        AdRequest adRequest5 = new AdRequest.Builder().build();
+        AdRequest adRequest6 = new AdRequest.Builder().build();
+        AdRequest adRequest7 = new AdRequest.Builder().build();
+        AdRequest adRequest8 = new AdRequest.Builder().build();
+        AdRequest adRequest9 = new AdRequest.Builder().build();
+        mAdView1.loadAd(adRequest1);
+        mAdView2.loadAd(adRequest2);
+        mAdView3.loadAd(adRequest3);
+        mAdView4.loadAd(adRequest4);
+        mAdView5.loadAd(adRequest5);
+        mAdView6.loadAd(adRequest6);
+        mAdView7.loadAd(adRequest7);
+        mAdView8.loadAd(adRequest8);
+        mAdView9.loadAd(adRequest9);
+
+        mAdView1.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                mAdView1.setVisibility(View.VISIBLE);
+            }
+        });
+        mAdView2.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                mAdView2.setVisibility(View.VISIBLE);
+            }
+        });
+        mAdView3.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                mAdView3.setVisibility(View.VISIBLE);
+            }
+        });
+        mAdView4.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                mAdView4.setVisibility(View.VISIBLE);
+            }
+        });
+        mAdView5.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                mAdView5.setVisibility(View.VISIBLE);
+            }
+        });
+        mAdView6.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                mAdView6.setVisibility(View.VISIBLE);
+            }
+        });
+        mAdView7.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                mAdView7.setVisibility(View.VISIBLE);
+            }
+        });
+        mAdView8.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                mAdView8.setVisibility(View.VISIBLE);
+            }
+        });
+        mAdView9.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                mAdView9.setVisibility(View.VISIBLE);
+            }
+        });
     }
     protected void showPicker(int startPosition) {
 

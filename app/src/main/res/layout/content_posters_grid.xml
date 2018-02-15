@@ -1,12 +1,17 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/adView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -15,397 +20,525 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_2"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_3"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_4"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_5"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_6"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
             </LinearLayout>
-
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ads:adSize="MEDIUM_RECTANGLE"
+                ads:adUnitId="@string/admob_banner_id">
+            </com.google.android.gms.ads.AdView>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_7"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_8"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_9"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_10"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_11"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_12"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
             </LinearLayout>
-
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ads:adSize="MEDIUM_RECTANGLE"
+                ads:adUnitId="@string/admob_banner_id">
+            </com.google.android.gms.ads.AdView>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_13"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_14"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_15"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_16"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_17"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_18"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
             </LinearLayout>
-
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ads:adSize="MEDIUM_RECTANGLE"
+                ads:adUnitId="@string/admob_banner_id">
+            </com.google.android.gms.ads.AdView>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_19"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_20"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_21"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_22"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_23"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_24"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
             </LinearLayout>
-
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ads:adSize="MEDIUM_RECTANGLE"
+                ads:adUnitId="@string/admob_banner_id">
+            </com.google.android.gms.ads.AdView>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_25"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_26"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_27"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_28"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_29"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_30"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
             </LinearLayout>
-
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ads:adSize="MEDIUM_RECTANGLE"
+                ads:adUnitId="@string/admob_banner_id">
+            </com.google.android.gms.ads.AdView>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_31"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_32"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_33"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_34"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_35"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_36"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
             </LinearLayout>
-
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ads:adSize="MEDIUM_RECTANGLE"
+                ads:adUnitId="@string/admob_banner_id">
+            </com.google.android.gms.ads.AdView>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_37"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_38"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_39"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_40"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_41"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/image_42"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@drawable/placeholder" />
 
             </LinearLayout>
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ads:adSize="MEDIUM_RECTANGLE"
+                ads:adUnitId="@string/admob_banner_id">
+            </com.google.android.gms.ads.AdView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/image_43"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@drawable/placeholder" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/image_44"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@drawable/placeholder" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/image_45"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@drawable/placeholder" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/image_46"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@drawable/placeholder" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/image_47"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@drawable/placeholder" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/image_48"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@drawable/placeholder" />
+
+            </LinearLayout>
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ads:adSize="MEDIUM_RECTANGLE"
+                ads:adUnitId="@string/admob_banner_id">
+            </com.google.android.gms.ads.AdView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/image_49"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@drawable/placeholder" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/image_50"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@drawable/placeholder" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/image_51"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@drawable/placeholder" />
+
+            </LinearLayout>
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ads:adSize="MEDIUM_RECTANGLE"
+                ads:adUnitId="@string/admob_banner_id">
+            </com.google.android.gms.ads.AdView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/image_52"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@drawable/placeholder" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/image_53"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@drawable/placeholder" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/image_54"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@drawable/placeholder" />
+
+            </LinearLayout>
+
+
+
         </LinearLayout>
     </ScrollView>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/admob_banner_id">
+    </com.google.android.gms.ads.AdView>
 
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
