@@ -19,6 +19,7 @@ import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.kobakei.ratethisapp.RateThisApp;
@@ -27,13 +28,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private FirebaseAnalytics mFirebaseAnalytics;
     AdView mAdView;
+    private InterstitialAd mInterstitialAd;
+    private final int REFRESH_TIME_SECONDS = 1 * 1000;
     private Handler mHandler;
     private Runnable mRunnableStart = new Runnable() {
         @Override
         public void run() {
             try {
-                if (AppUtils.isInternetAvailable(getApplicationContext())){
-                    startActivity(new Intent(MainActivity.this,AdActivity.class));
+                mHandler.removeCallbacks(mRunnableStart);
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    if (AppUtils.isInternetAvailable(getApplicationContext()))
+                        mHandler.postDelayed(mRunnableStart, REFRESH_TIME_SECONDS);
                 }
             } catch (Exception e) {
             }
@@ -54,8 +61,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         MobileAds.initialize(this, getString(R.string.admob_app_id));
-        mHandler = new Handler();
-        mHandler.postDelayed(mRunnableStart, 3000);
         mAdView = (AdView) findViewById(R.id.adView_main);
         mAdView.setVisibility(View.GONE);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -97,6 +102,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "MainActivity");
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getString(R.string.admob_interstitial));
+        mHandler = new Handler();
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        mHandler.postDelayed(mRunnableStart, 2000);
     }
     private void initFresco() {
         ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
@@ -132,6 +142,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
         mHandler.postDelayed(mRunnableStart, 1000);
 
     }
@@ -167,7 +178,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.about_us:
-                startActivity(new Intent(this,TutorialActivity.class));
+//                startActivity(new Intent(this,TutorialActivity.class));
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("market://details?id=" + "com.appinspire.fingermehandidesigns")));
+                } catch (android.content.ActivityNotFoundException e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("http://play.google.com/store/apps/details?id=" + "com.appinspire.fingermehandidesigns")));
+                }
                 break;
             case R.id.share_app:
                 try {
