@@ -57,7 +57,19 @@ public final class Demo {
                 POSTERS_PATH + "/design39.jpg",
                 POSTERS_PATH + "/design40.jpg",
                 POSTERS_PATH + "/design41.jpg",
-                POSTERS_PATH + "/design42.jpg"
+                POSTERS_PATH + "/design42.jpg",
+                POSTERS_PATH + "/design43.jpg",
+                POSTERS_PATH + "/design44.jpg",
+                POSTERS_PATH + "/design45.jpg",
+                POSTERS_PATH + "/design46.jpg",
+                POSTERS_PATH + "/design47.jpg",
+                POSTERS_PATH + "/design48.jpg",
+                POSTERS_PATH + "/design49.jpg",
+                POSTERS_PATH + "/design50.jpg",
+                POSTERS_PATH + "/design51.jpg",
+                POSTERS_PATH + "/design52.jpg",
+                POSTERS_PATH + "/design53.jpg",
+                POSTERS_PATH + "/design54.jpg"
         };
 
     }

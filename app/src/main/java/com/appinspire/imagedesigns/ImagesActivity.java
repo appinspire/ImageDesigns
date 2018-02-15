@@ -88,6 +88,18 @@ public class ImagesActivity extends AppCompatActivity {
             R.id.image_40,
             R.id.image_41,
             R.id.image_42,
+            R.id.image_43,
+            R.id.image_44,
+            R.id.image_45,
+            R.id.image_46,
+            R.id.image_47,
+            R.id.image_48,
+            R.id.image_49,
+            R.id.image_50,
+            R.id.image_51,
+            R.id.image_52,
+            R.id.image_53,
+            R.id.image_54,
     };
 
     protected String[] posters, descriptions;
