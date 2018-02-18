@@ -22,18 +22,25 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.kobakei.ratethisapp.RateThisApp;
+import com.google.android.gms.ads.InterstitialAd;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAnalytics mFirebaseAnalytics;
     AdView mAdView;
+    private InterstitialAd mInterstitialAd;
+    private final int REFRESH_TIME_SECONDS = 1 * 1000;
     private Handler mHandler;
     private Runnable mRunnableStart = new Runnable() {
         @Override
         public void run() {
             try {
-                if (AppUtils.isInternetAvailable(getApplicationContext())){
-                    startActivity(new Intent(MainActivity.this,AdActivity.class));
+                mHandler.removeCallbacks(mRunnableStart);
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    if (AppUtils.isInternetAvailable(getApplicationContext()))
+                        mHandler.postDelayed(mRunnableStart, REFRESH_TIME_SECONDS);
                 }
             } catch (Exception e) {
             }
@@ -45,22 +52,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CardView more_apps_card;
     CardView about_us_card;
     CardView more_prods_card;
-    ImageView more_prods,copyrights;
+    ImageView more_prods, copyrights;
     TextView more_prods_text;
     CardView designs_card;
     SimpleDialog mSimpleDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         MobileAds.initialize(this, getString(R.string.admob_app_id));
-        mHandler = new Handler();
-        mHandler.postDelayed(mRunnableStart, 3000);
         mAdView = (AdView) findViewById(R.id.adView_main);
         mAdView.setVisibility(View.GONE);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
-        mAdView.setAdListener(new AdListener(){
+        mAdView.setAdListener(new AdListener() {
             @Override
             public void onAdLoaded() {
                 mAdView.setVisibility(View.VISIBLE);
@@ -89,15 +95,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         RateThisApp.Config config = new RateThisApp.Config(2, 2);
         RateThisApp.init(config);
         RateThisApp.showRateDialogIfNeeded(this);
-        if(!PrefUtils.getBoolean(this, Constants.FIRST_RUN,false)){
+        if (!PrefUtils.getBoolean(this, Constants.FIRST_RUN, false)) {
             showDisclaimer();
-            PrefUtils.persistBoolean(this,Constants.FIRST_RUN,true);
+            PrefUtils.persistBoolean(this, Constants.FIRST_RUN, true);
         }
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "MainActivity");
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getString(R.string.admob_interstitial));
+        mHandler = new Handler();
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        mHandler.postDelayed(mRunnableStart, 2000);
     }
+
     private void initFresco() {
         ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
         ImagePipelineConfig imagePipelineConfig = ImagePipelineConfig
@@ -107,12 +119,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Fresco.initialize(getApplicationContext(), imagePipelineConfig);
     }
-    public void showDisclaimer(){
-        showSimpleDialog("Disclaimer",getString(R.string.disclaimer));
+
+    public void showDisclaimer() {
+        showSimpleDialog("Disclaimer", getString(R.string.disclaimer));
     }
 
     private void showSimpleDialog(String title, String content) {
-        mSimpleDialog = new SimpleDialog(this, title, content,null,"Ok"
+        mSimpleDialog = new SimpleDialog(this, title, content, null, "Ok"
                 , new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -132,13 +145,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
         mHandler.postDelayed(mRunnableStart, 1000);
 
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.more_apps:
                 try {
                     startActivity(new Intent(Intent.ACTION_VIEW,
@@ -149,10 +163,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.imageView5:
-                startActivity(new Intent(this,AdActivity.class));
+                startActivity(new Intent(this, AdActivity.class));
                 break;
             case R.id.textView5:
-                startActivity(new Intent(this,AdActivity.class));
+                startActivity(new Intent(this, AdActivity.class));
                 break;
             case R.id.imageView7:
                 showDisclaimer();
@@ -167,7 +181,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.about_us:
-                startActivity(new Intent(this,TutorialActivity.class));
+//                startActivity(new Intent(this, TutorialActivity.class));
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("market://details?id=" + "com.appinspire.arabicmehandidesigns")));
+                } catch (android.content.ActivityNotFoundException e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("http://play.google.com/store/apps/details?id=" + "com.appinspire.arabicmehandidesigns")));
+                }
                 break;
             case R.id.share_app:
                 try {
@@ -175,15 +196,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     i.setType("text/plain");
                     i.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
                     String sAux = "\nLet me recommend you this application\n\n";
-                    sAux = sAux + "https://play.google.com/store/apps/details?id="+this.getPackageName()+"\n\n";
+                    sAux = sAux + "https://play.google.com/store/apps/details?id=" + this.getPackageName() + "\n\n";
                     i.putExtra(Intent.EXTRA_TEXT, sAux);
                     startActivity(Intent.createChooser(i, "Choose one"));
-                } catch(Exception e) {
+                } catch (Exception e) {
                     //e.toString();
                 }
                 break;
             case R.id.designs:
-                startActivity(new Intent(this,ImagesActivity.class));
+                startActivity(new Intent(this, ImagesActivity.class));
                 break;
         }
 
