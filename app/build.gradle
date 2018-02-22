@@ -7,7 +7,7 @@ android {
         applicationId "com.appinspire.fancymehandidesigns"
         minSdkVersion 19
         targetSdkVersion 26
-        versionCode 3
+        versionCode 4
         versionName "1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
