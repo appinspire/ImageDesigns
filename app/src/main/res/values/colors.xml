@@ -12,4 +12,5 @@
     <color name="galleryCurrentItemOverlay">@android:color/transparent</color>
     <color name="colorSimpleDialogText">#002256</color>
     <color name="colorDialogToolbar">@color/colorPrimaryDark</color>
+    <color name="colorQuizCard">#f79b99</color>
 </resources>
