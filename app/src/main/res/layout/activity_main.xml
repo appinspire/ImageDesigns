@@ -248,6 +248,30 @@
                 </android.support.v7.widget.CardView>
 
             </LinearLayout>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginStart="@dimen/spacing_medium"
+                android:clickable="true"
+                android:id="@+id/quiz_app"
+                android:layout_marginEnd="@dimen/spacing_medium"
+                app:cardBackgroundColor="@color/colorQuizCard"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="Guess the Flag Quiz"
+                        android:layout_gravity="center"
+                        android:textSize="17sp"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:layout_marginBottom="@dimen/spacing_small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
