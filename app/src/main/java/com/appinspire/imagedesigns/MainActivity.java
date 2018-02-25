@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CardView share_app_card;
     CardView rate_app_card;
     CardView more_apps_card;
+    CardView quiz_app_card;
     CardView about_us_card;
     CardView more_prods_card;
     ImageView more_prods,copyrights;
@@ -74,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         designs_card = (CardView) findViewById(R.id.designs);
         share_app_card = (CardView) findViewById(R.id.share_app);
         more_apps_card = (CardView) findViewById(R.id.more_apps);
+        quiz_app_card = (CardView) findViewById(R.id.quiz_app);
         more_prods_card = (CardView) findViewById(R.id.more_prods);
         rate_app_card = (CardView) findViewById(R.id.rate_app);
         about_us_card = (CardView) findViewById(R.id.about_us);
@@ -83,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         designs_card.setOnClickListener(this);
         share_app_card.setOnClickListener(this);
         more_apps_card.setOnClickListener(this);
+        quiz_app_card.setOnClickListener(this);
         rate_app_card.setOnClickListener(this);
         about_us_card.setOnClickListener(this);
         more_prods.setOnClickListener(this);
@@ -185,6 +188,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 } catch (android.content.ActivityNotFoundException e) {
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             Uri.parse("http://play.google.com/store/apps/details?id=" + "com.appinspire.fingermehandidesigns")));
+                }
+                break;
+            case R.id.quiz_app:
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("market://details?id=" + "com.fuzzylogics.guess.the.flag.quiz")));
+                } catch (android.content.ActivityNotFoundException e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("http://play.google.com/store/apps/details?id=" + "com.fuzzylogics.guess.the.flag.quiz")));
                 }
                 break;
             case R.id.share_app:
