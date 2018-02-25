@@ -4,11 +4,11 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.2"
     defaultConfig {
-        applicationId "com.appinspire.fancymehandidesigns"
+        applicationId "com.appinspire.indianmehandidesigns"
         minSdkVersion 19
         targetSdkVersion 26
-        versionCode 4
-        versionName "1.2"
+        versionCode 1
+        versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

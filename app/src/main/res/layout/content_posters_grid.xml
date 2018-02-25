@@ -72,6 +72,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 ads:adSize="MEDIUM_RECTANGLE"
+                android:layout_gravity="center"
                 ads:adUnitId="@string/admob_banner_id">
             </com.google.android.gms.ads.AdView>
             <LinearLayout
@@ -128,6 +129,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 ads:adSize="MEDIUM_RECTANGLE"
+                android:layout_gravity="center"
                 ads:adUnitId="@string/admob_banner_id">
             </com.google.android.gms.ads.AdView>
             <LinearLayout
@@ -184,6 +186,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 ads:adSize="MEDIUM_RECTANGLE"
+                android:layout_gravity="center"
                 ads:adUnitId="@string/admob_banner_id">
             </com.google.android.gms.ads.AdView>
             <LinearLayout
@@ -240,6 +243,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 ads:adSize="MEDIUM_RECTANGLE"
+                android:layout_gravity="center"
                 ads:adUnitId="@string/admob_banner_id">
             </com.google.android.gms.ads.AdView>
             <LinearLayout
@@ -296,6 +300,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 ads:adSize="MEDIUM_RECTANGLE"
+                android:layout_gravity="center"
                 ads:adUnitId="@string/admob_banner_id">
             </com.google.android.gms.ads.AdView>
             <LinearLayout
@@ -352,6 +357,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 ads:adSize="MEDIUM_RECTANGLE"
+                android:layout_gravity="center"
                 ads:adUnitId="@string/admob_banner_id">
             </com.google.android.gms.ads.AdView>
             <LinearLayout
@@ -408,6 +414,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 ads:adSize="MEDIUM_RECTANGLE"
+                android:layout_gravity="center"
                 ads:adUnitId="@string/admob_banner_id">
             </com.google.android.gms.ads.AdView>
             <LinearLayout
@@ -464,6 +471,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 ads:adSize="MEDIUM_RECTANGLE"
+                android:layout_gravity="center"
                 ads:adUnitId="@string/admob_banner_id">
             </com.google.android.gms.ads.AdView>
             <LinearLayout
@@ -496,6 +504,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 ads:adSize="MEDIUM_RECTANGLE"
+                android:layout_gravity="center"
                 ads:adUnitId="@string/admob_banner_id">
             </com.google.android.gms.ads.AdView>
             <LinearLayout
