@@ -12,7 +12,7 @@ public final class Demo {
         throw new AssertionError();
     }
 
-    private static final String POSTERS_PATH = "https://s3.ap-northeast-2.amazonaws.com/imagegallery/IndianMehandi";
+    private static final String POSTERS_PATH = "https://s3.ap-northeast-2.amazonaws.com/imagegallery/HandMehandi";
 
     public static String[] getPosters() {
         return new String[]{
