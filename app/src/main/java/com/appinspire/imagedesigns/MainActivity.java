@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private FirebaseAnalytics mFirebaseAnalytics;
     AdView mAdView;
+    AdView mAdView2;
     private InterstitialAd mInterstitialAd;
     private final int REFRESH_TIME_SECONDS = 1 * 1000;
     private Handler mHandler;
@@ -53,8 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CardView quiz_app_card;
     CardView about_us_card;
     CardView more_prods_card;
-    ImageView more_prods,copyrights;
-    TextView more_prods_text;
+    ImageView copyrights;
     CardView designs_card;
     SimpleDialog mSimpleDialog;
     @Override
@@ -63,7 +63,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         MobileAds.initialize(this, getString(R.string.admob_app_id));
         mAdView = (AdView) findViewById(R.id.adView_main);
+        mAdView2 = (AdView) findViewById(R.id.adView_main2);
         mAdView.setVisibility(View.GONE);
+        mAdView2.setVisibility(View.VISIBLE);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
         mAdView.setAdListener(new AdListener(){
@@ -72,6 +74,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mAdView.setVisibility(View.VISIBLE);
             }
         });
+        AdRequest adRequest2 = new AdRequest.Builder().build();
+        mAdView2.loadAd(adRequest2);
         designs_card = (CardView) findViewById(R.id.designs);
         share_app_card = (CardView) findViewById(R.id.share_app);
         more_apps_card = (CardView) findViewById(R.id.more_apps);
@@ -79,8 +83,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         more_prods_card = (CardView) findViewById(R.id.more_prods);
         rate_app_card = (CardView) findViewById(R.id.rate_app);
         about_us_card = (CardView) findViewById(R.id.about_us);
-        more_prods = (ImageView) findViewById(R.id.imageView5);
-        more_prods_text = (TextView) findViewById(R.id.textView5);
         copyrights = (ImageView) findViewById(R.id.imageView7);
         designs_card.setOnClickListener(this);
         share_app_card.setOnClickListener(this);
@@ -88,9 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         quiz_app_card.setOnClickListener(this);
         rate_app_card.setOnClickListener(this);
         about_us_card.setOnClickListener(this);
-        more_prods.setOnClickListener(this);
         copyrights.setOnClickListener(this);
-        more_prods_text.setOnClickListener(this);
         initFresco();
         RateThisApp.onCreate(this);
         // If the condition is satisfied, "Rate this app" dialog will be shown
@@ -161,12 +161,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             Uri.parse("http://play.google.com/store/search?q=pub:Mob Studios")));
                 }
-                break;
-            case R.id.imageView5:
-                startActivity(new Intent(this,AdActivity.class));
-                break;
-            case R.id.textView5:
-                startActivity(new Intent(this,AdActivity.class));
                 break;
             case R.id.imageView7:
                 showDisclaimer();
