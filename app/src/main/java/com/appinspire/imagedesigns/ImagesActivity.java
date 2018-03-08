@@ -271,8 +271,8 @@ public class ImagesActivity extends AppCompatActivity {
             @Override
             public void onImageChange(int position) {
                 if(position % 3 == 0) {
-                    mInterstitialAd.loadAd(new AdRequest.Builder().build());
-                    mHandler.postDelayed(mRunnableStart, 200);
+//                    mInterstitialAd.loadAd(new AdRequest.Builder().build());
+//                    mHandler.postDelayed(mRunnableStart, 200);
                 }
             }
         })
