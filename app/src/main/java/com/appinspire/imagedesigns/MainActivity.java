@@ -87,7 +87,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         designs_card.setOnClickListener(this);
         share_app_card.setOnClickListener(this);
         more_apps_card.setOnClickListener(this);
-        quiz_app_card.setOnClickListener(this);
+//        quiz_app_card.setOnClickListener(this);
+        quiz_app_card.setVisibility(View.GONE);
         rate_app_card.setOnClickListener(this);
         about_us_card.setOnClickListener(this);
         copyrights.setOnClickListener(this);
