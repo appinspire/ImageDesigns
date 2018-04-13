@@ -218,10 +218,13 @@ public class ImagesActivity extends AppCompatActivity {
             }
         });
     }
+    private ImageOverlayView overlayView;
     protected void showPicker(int startPosition) {
+        overlayView = new ImageOverlayView(this);
 
         new ImageViewer.Builder<>(this, posters)
-                .setStartPosition(startPosition).setImageChangeListener(new ImageViewer.OnImageChangeListener() {
+                .setStartPosition(startPosition).setOverlayView(overlayView)
+                .setImageChangeListener(new ImageViewer.OnImageChangeListener() {
             @Override
             public void onImageChange(int position) {
                 if(position % 3 == 0) {
