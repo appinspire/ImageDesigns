@@ -14,7 +14,7 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import com.stfalcon.frescoimageviewer.ImageViewer;
 
 public class ImagesActivity extends AppCompatActivity {
-    private InterstitialAd mInterstitialAd;
+//    private InterstitialAd mInterstitialAd;
     AdView mAdView;
     AdView mAdView1;
     AdView mAdView2;
@@ -33,13 +33,13 @@ public class ImagesActivity extends AppCompatActivity {
         @Override
         public void run() {
             try {
-                mHandler.removeCallbacks(mRunnableStart);
-                if (mInterstitialAd.isLoaded()) {
-                    mInterstitialAd.show();
-                } else {
-                    if (AppUtils.isInternetAvailable(getApplicationContext()))
-                        mHandler.postDelayed(mRunnableStart, REFRESH_TIME_SECONDS);
-                }
+//                mHandler.removeCallbacks(mRunnableStart);
+//                if (mInterstitialAd.isLoaded()) {
+//                    mInterstitialAd.show();
+//                } else {
+//                    if (AppUtils.isInternetAvailable(getApplicationContext()))
+//                        mHandler.postDelayed(mRunnableStart, REFRESH_TIME_SECONDS);
+//                }
             } catch (Exception e) {
             }
 
@@ -81,8 +81,8 @@ public class ImagesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo);
         init();
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getString(R.string.admob_interstitial));
+//        mInterstitialAd = new InterstitialAd(this);
+//        mInterstitialAd.setAdUnitId(getString(R.string.admob_interstitial));
         mHandler = new Handler();
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         Bundle bundle = new Bundle();

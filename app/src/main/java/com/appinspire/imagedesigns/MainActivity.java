@@ -108,8 +108,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId(getString(R.string.admob_interstitial));
         mHandler = new Handler();
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-        mHandler.postDelayed(mRunnableStart, 2000);
+//        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+//        mHandler.postDelayed(mRunnableStart, 2000);
     }
     private void initFresco() {
         ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
@@ -145,8 +145,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-        mHandler.postDelayed(mRunnableStart, 1000);
+//        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+//        mHandler.postDelayed(mRunnableStart, 1000);
 
     }
 
