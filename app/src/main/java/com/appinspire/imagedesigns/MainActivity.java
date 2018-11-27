@@ -29,29 +29,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FirebaseAnalytics mFirebaseAnalytics;
     AdView mAdView;
     AdView mAdView2;
-    private InterstitialAd mInterstitialAd;
-    private final int REFRESH_TIME_SECONDS = 1 * 1000;
-    private Handler mHandler;
-    private Runnable mRunnableStart = new Runnable() {
-        @Override
-        public void run() {
-            try {
-                mHandler.removeCallbacks(mRunnableStart);
-                if (mInterstitialAd.isLoaded()) {
-                    mInterstitialAd.show();
-                } else {
-                    if (AppUtils.isInternetAvailable(getApplicationContext()))
-                        mHandler.postDelayed(mRunnableStart, REFRESH_TIME_SECONDS);
-                }
-            } catch (Exception e) {
-            }
-
-        }
-    };
+//    private InterstitialAd mInterstitialAd;
+//    private final int REFRESH_TIME_SECONDS = 1 * 1000;
+//    private Handler mHandler;
+//    private Runnable mRunnableStart = new Runnable() {
+//        @Override
+//        public void run() {
+//            try {
+//                mHandler.removeCallbacks(mRunnableStart);
+//                if (mInterstitialAd.isLoaded()) {
+//                    mInterstitialAd.show();
+//                } else {
+//                    if (AppUtils.isInternetAvailable(getApplicationContext()))
+//                        mHandler.postDelayed(mRunnableStart, REFRESH_TIME_SECONDS);
+//                }
+//            } catch (Exception e) {
+//            }
+//
+//        }
+//    };
     CardView share_app_card;
     CardView rate_app_card;
     CardView more_apps_card;
-    CardView quiz_app_card;
     CardView about_us_card;
     CardView more_prods_card;
     ImageView copyrights;
@@ -79,7 +78,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         designs_card = (CardView) findViewById(R.id.designs);
         share_app_card = (CardView) findViewById(R.id.share_app);
         more_apps_card = (CardView) findViewById(R.id.more_apps);
-        quiz_app_card = (CardView) findViewById(R.id.quiz_app);
         more_prods_card = (CardView) findViewById(R.id.more_prods);
         rate_app_card = (CardView) findViewById(R.id.rate_app);
         about_us_card = (CardView) findViewById(R.id.about_us);
@@ -88,7 +86,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         share_app_card.setOnClickListener(this);
         more_apps_card.setOnClickListener(this);
 //        quiz_app_card.setOnClickListener(this);
-        quiz_app_card.setVisibility(View.GONE);
         rate_app_card.setOnClickListener(this);
         about_us_card.setOnClickListener(this);
         copyrights.setOnClickListener(this);
@@ -106,11 +103,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "MainActivity");
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getString(R.string.admob_interstitial));
-        mHandler = new Handler();
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-        mHandler.postDelayed(mRunnableStart, 2000);
+//        mInterstitialAd = new InterstitialAd(this);
+//        mInterstitialAd.setAdUnitId(getString(R.string.admob_interstitial));
+//        mHandler = new Handler();
+//        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+//        mHandler.postDelayed(mRunnableStart, 2000);
     }
     private void initFresco() {
         ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
@@ -146,8 +143,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-        mHandler.postDelayed(mRunnableStart, 1000);
+//        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+//        mHandler.postDelayed(mRunnableStart, 1000);
 
     }
 
@@ -183,15 +180,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 } catch (android.content.ActivityNotFoundException e) {
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             Uri.parse("http://play.google.com/store/apps/details?id=" + "com.appinspire.fingermehandidesigns")));
-                }
-                break;
-            case R.id.quiz_app:
-                try {
-                    startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("market://details?id=" + "com.fuzzylogics.guess.the.flag.quiz")));
-                } catch (android.content.ActivityNotFoundException e) {
-                    startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("http://play.google.com/store/apps/details?id=" + "com.fuzzylogics.guess.the.flag.quiz")));
                 }
                 break;
             case R.id.share_app:

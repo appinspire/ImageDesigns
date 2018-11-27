@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">Bridal Mehandi Designs</string>
     <!--real ad ids-->
-    <string name="admob_app_id">ca-app-pub-3829777018725711~7624047269</string>
-    <string name="admob_banner_id">ca-app-pub-3829777018725711/1016653143</string>
-    <string name="admob_interstitial">ca-app-pub-3829777018725711/7007346423</string>
+    <!--<string name="admob_app_id">ca-app-pub-3829777018725711~7624047269</string>-->
+    <!--<string name="admob_banner_id">ca-app-pub-3829777018725711/1016653143</string>-->
+    <!--<string name="admob_interstitial">ca-app-pub-3829777018725711/7007346423</string>-->
     <!--test ad ids-->
-    <!--<string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>-->
-    <!--<string name="admob_banner_id">ca-app-pub-3940256099942544/6300978111</string>-->
-    <!--<string name="admob_interstitial">ca-app-pub-3940256099942544/1033173712</string>-->
+    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="admob_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_interstitial">ca-app-pub-3940256099942544/1033173712</string>
 
 
     <string name="splash_text">Bridal Mehandi Designs</string>
