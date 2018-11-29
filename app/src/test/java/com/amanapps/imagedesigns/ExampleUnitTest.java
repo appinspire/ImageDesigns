@@ -1,4 +1,4 @@
-package com.appinspire.imagedesigns;
+package com.amanapps.imagedesigns;
 
 import org.junit.Test;
 

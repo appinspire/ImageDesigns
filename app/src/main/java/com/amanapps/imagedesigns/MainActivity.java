@@ -1,25 +1,22 @@
-package com.appinspire.imagedesigns;
+package com.amanapps.imagedesigns;
 
 import android.app.ActivityManager;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.appinspire.imagedesigns.dialog.SimpleDialog;
-import com.appinspire.imagedesigns.utils.Constants;
-import com.appinspire.imagedesigns.utils.PrefUtils;
+import com.amanapps.imagedesigns.dialog.SimpleDialog;
+import com.amanapps.imagedesigns.utils.Constants;
+import com.amanapps.imagedesigns.utils.PrefUtils;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.kobakei.ratethisapp.RateThisApp;
@@ -173,7 +170,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.about_us:
-//                startActivity(new Intent(this,TutorialActivity.class));
                 try {
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             Uri.parse("market://details?id=" + "com.appinspire.fingermehandidesigns")));

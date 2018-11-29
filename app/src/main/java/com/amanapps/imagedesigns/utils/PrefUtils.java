@@ -1,4 +1,4 @@
-package com.appinspire.imagedesigns.utils;
+package com.amanapps.imagedesigns.utils;
 
 import android.content.Context;
 import android.preference.PreferenceManager;

@@ -1,4 +1,4 @@
-package com.appinspire.imagedesigns;
+package com.amanapps.imagedesigns;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

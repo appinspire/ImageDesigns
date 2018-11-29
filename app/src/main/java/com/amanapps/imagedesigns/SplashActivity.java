@@ -1,4 +1,4 @@
-package com.appinspire.imagedesigns;
+package com.amanapps.imagedesigns;
 
 import android.os.Bundle;
 import android.os.Handler;

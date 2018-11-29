@@ -1,4 +1,4 @@
-package com.appinspire.imagedesigns.utils;
+package com.amanapps.imagedesigns.utils;
 
 /**
  * Created by Bilal Rashid on 1/3/2018.

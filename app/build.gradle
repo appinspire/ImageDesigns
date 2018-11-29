@@ -4,11 +4,11 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.2"
     defaultConfig {
-        applicationId "com.appinspire.bridalmehandidesigns"
+        applicationId "com.optimisedapps.rings"
         minSdkVersion 19
         targetSdkVersion 26
-        versionCode 3
-        versionName "1.2"
+        versionCode 1
+        versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -36,5 +36,6 @@ dependencies {
     compile "com.facebook.fresco:fresco:1.2.0"
     compile 'io.github.kobakei:ratethisapp:1.2.0'
     compile 'com.google.firebase:firebase-core:11.8.0'
+    compile 'com.google.firebase:firebase-database:11.8.0'
 }
 apply plugin: 'com.google.gms.google-services'

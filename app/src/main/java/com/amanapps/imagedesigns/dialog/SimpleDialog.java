@@ -1,4 +1,4 @@
-package com.appinspire.imagedesigns.dialog;
+package com.amanapps.imagedesigns.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.appinspire.imagedesigns.R;
+import com.amanapps.imagedesigns.R;
 
 /**
  * Created by Bilal Rashid on 1/2/2018.

@@ -1,4 +1,4 @@
-package com.appinspire.imagedesigns;
+package com.amanapps.imagedesigns;
 
 import android.app.Activity;
 import android.content.Intent;

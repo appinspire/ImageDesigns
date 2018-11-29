@@ -1,8 +1,5 @@
-package com.appinspire.imagedesigns;
+package com.amanapps.imagedesigns;
 
-
-import java.util.ArrayList;
-import java.util.List;
 
 /*
  * Created by troy379 on 14.09.16.
