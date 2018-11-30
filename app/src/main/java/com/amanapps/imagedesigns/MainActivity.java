@@ -3,29 +3,40 @@ package com.amanapps.imagedesigns;
 import android.app.ActivityManager;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.amanapps.imagedesigns.dialog.SimpleDialog;
+import com.amanapps.imagedesigns.models.Configuration;
 import com.amanapps.imagedesigns.utils.Constants;
 import com.amanapps.imagedesigns.utils.PrefUtils;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.kobakei.ratethisapp.RateThisApp;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private FirebaseAnalytics mFirebaseAnalytics;
-    AdView mAdView;
-    AdView mAdView2;
+    LinearLayout adContainerTop;
+    LinearLayout adContainerBottom;
+    private DatabaseReference mDatabase;
 //    private InterstitialAd mInterstitialAd;
 //    private final int REFRESH_TIME_SECONDS = 1 * 1000;
 //    private Handler mHandler;
@@ -53,25 +64,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ImageView copyrights;
     CardView designs_card;
     SimpleDialog mSimpleDialog;
+    Configuration mConfiguration;
+    ValueEventListener valueEventListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        MobileAds.initialize(this, getString(R.string.admob_app_id));
-        mAdView = (AdView) findViewById(R.id.adView_main);
-        mAdView2 = (AdView) findViewById(R.id.adView_main2);
-        mAdView.setVisibility(View.GONE);
-        mAdView2.setVisibility(View.VISIBLE);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-        mAdView.setAdListener(new AdListener(){
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        valueEventListener = new ValueEventListener() {
             @Override
-            public void onAdLoaded() {
-                mAdView.setVisibility(View.VISIBLE);
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                mConfiguration = dataSnapshot.getValue(Configuration.class);
+                setupAds();
+
             }
-        });
-        AdRequest adRequest2 = new AdRequest.Builder().build();
-        mAdView2.loadAd(adRequest2);
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
+        mDatabase.child("ringdesigns").addValueEventListener(valueEventListener);
         designs_card = (CardView) findViewById(R.id.designs);
         share_app_card = (CardView) findViewById(R.id.share_app);
         more_apps_card = (CardView) findViewById(R.id.more_apps);
@@ -105,6 +118,47 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        mHandler = new Handler();
 //        mInterstitialAd.loadAd(new AdRequest.Builder().build());
 //        mHandler.postDelayed(mRunnableStart, 2000);
+    }
+    public void setupAds(){
+        MobileAds.initialize(this, mConfiguration.admob_app_id);
+        adContainerTop = (LinearLayout) findViewById(R.id.ad_container_top);
+        adContainerBottom = (LinearLayout) findViewById(R.id.ad_container_bottom);
+        ViewGroup.LayoutParams wrapParams = new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        final AdView adViewTop,adViewBottom;
+        adViewTop = new AdView(this);
+        adViewBottom = new AdView(this);
+
+        adViewTop.setLayoutParams(wrapParams);
+        adViewTop.setAdUnitId(mConfiguration.admob_banner_id);
+        adViewTop.setAdSize(AdSize.LARGE_BANNER);
+        adViewTop.setVisibility(View.GONE);
+
+        adViewBottom.setLayoutParams(wrapParams);
+        adViewBottom.setAdUnitId(mConfiguration.admob_banner_id);
+        adViewBottom.setAdSize(AdSize.BANNER);
+        adViewBottom.setVisibility(View.GONE);
+
+        AdRequest adRequestTop = new AdRequest.Builder().build();
+        AdRequest adRequestBottom = new AdRequest.Builder().build();
+
+        adContainerTop.addView(adViewTop);
+        adContainerBottom.addView(adViewBottom);
+
+        adViewTop.loadAd(adRequestTop);
+        adViewBottom.loadAd(adRequestBottom);
+        adViewTop.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                adViewTop.setVisibility(View.VISIBLE);
+            }
+        });
+        adViewBottom.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                adViewBottom.setVisibility(View.VISIBLE);
+            }
+        });
     }
     private void initFresco() {
         ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
@@ -143,6 +197,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        mInterstitialAd.loadAd(new AdRequest.Builder().build());
 //        mHandler.postDelayed(mRunnableStart, 1000);
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mDatabase.child("ringdesigns").removeEventListener(valueEventListener);
     }
 
     @Override

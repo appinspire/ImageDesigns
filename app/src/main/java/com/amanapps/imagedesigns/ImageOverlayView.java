@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.amanapps.imagedesigns.utils.Constants;
+import com.amanapps.imagedesigns.utils.PrefUtils;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
@@ -48,11 +50,11 @@ public class ImageOverlayView extends RelativeLayout {
         adViewBottom = new AdView(getContext());
 
         adViewTop.setLayoutParams(wrapParams);
-        adViewTop.setAdUnitId(getResources().getString(R.string.admob_banner_id));
+        adViewTop.setAdUnitId(PrefUtils.getString(getContext(), Constants.BANNER_ID));
         adViewTop.setAdSize(AdSize.BANNER);
 
         adViewBottom.setLayoutParams(wrapParams);
-        adViewBottom.setAdUnitId(getResources().getString(R.string.admob_banner_id));
+        adViewBottom.setAdUnitId(PrefUtils.getString(getContext(), Constants.BANNER_ID));
         adViewBottom.setAdSize(AdSize.BANNER);
 
         AdRequest adRequestTop = new AdRequest.Builder().build();

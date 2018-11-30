@@ -9,8 +9,14 @@ public final class Demo {
         throw new AssertionError();
     }
 
-    //https://firebasestorage.googleapis.com/v0/b/couple-ring-designs-bae9c.appspot.com/o/Design3.jpg?alt=media
-    private static final String POSTERS_PATH = "https://firebasestorage.googleapis.com/v0/b/couple-ring-designs-bae9c.appspot.com/o/";
+//    private static final String POSTERS_PATH = "https://firebasestorage.googleapis.com/v0/b/couple-ring-designs-bae9c.appspot.com/o/";
+//    private static final String POSTERS_PATH = "https://firebasestorage.googleapis.com/v0/b/diamond-ring-designs-e09b0.appspot.com/o/";
+//    private static final String POSTERS_PATH = "https://firebasestorage.googleapis.com/v0/b/engagement-ring-designs-a6816.appspot.com/o/";
+//    private static final String POSTERS_PATH = "https://firebasestorage.googleapis.com/v0/b/jewelry-ring-designs-4cf9e.appspot.com/o/";
+//    private static final String POSTERS_PATH = "https://firebasestorage.googleapis.com/v0/b/ring-designs.appspot.com/o/";
+//    private static final String POSTERS_PATH = "https://firebasestorage.googleapis.com/v0/b/promise-ring-designs-57287.appspot.com/o/";
+//    private static final String POSTERS_PATH = "https://firebasestorage.googleapis.com/v0/b/unique-ring-designs-af4e5.appspot.com/o/";
+    private static final String POSTERS_PATH = "https://firebasestorage.googleapis.com/v0/b/wedding-ring-designs-75c9a.appspot.com/o/";
 
     public static String[] getPosters() {
         return new String[]{
