@@ -1,5 +1,6 @@
 package com.amanapps.imagedesigns;
 
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.stfalcon.frescoimageviewer.ImageViewer;
 
@@ -18,27 +20,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ImagesActivity extends AppCompatActivity {
-//    private InterstitialAd mInterstitialAd;
-    AdView mAdView;
-    LinearLayout layoutParent;
-//    private final int REFRESH_TIME_SECONDS = 1 * 1000;
-//    private Handler mHandler;
-//    private Runnable mRunnableStart = new Runnable() {
-//        @Override
-//        public void run() {
-//            try {
-//                mHandler.removeCallbacks(mRunnableStart);
-//                if (mInterstitialAd.isLoaded()) {
-//                    mInterstitialAd.show();
-//                } else {
-//                    if (AppUtils.isInternetAvailable(getApplicationContext()))
-//                        mHandler.postDelayed(mRunnableStart, REFRESH_TIME_SECONDS);
-//                }
-//            } catch (Exception e) {
-//            }
-//
-//        }
-//    };
+    private InterstitialAd mInterstitialAd;
+    LinearLayout layoutParent,adContainerBottom;
+    private final int REFRESH_TIME_SECONDS = 1 * 1000;
+    private Handler mHandler;
+    private Runnable mRunnableStart = new Runnable() {
+        @Override
+        public void run() {
+            try {
+                mHandler.removeCallbacks(mRunnableStart);
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    if (AppUtils.isInternetAvailable(getApplicationContext()))
+                        mHandler.postDelayed(mRunnableStart, REFRESH_TIME_SECONDS);
+                }
+            } catch (Exception e) {
+            }
+
+        }
+    };
 
     private FirebaseAnalytics mFirebaseAnalytics;
 
@@ -48,21 +49,34 @@ public class ImagesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo);
         layoutParent = (LinearLayout) findViewById(R.id.parent_layout);
+        adContainerBottom = (LinearLayout) findViewById(R.id.ad_container_bottom);
         init();
-//        mInterstitialAd = new InterstitialAd(this);
-//        mInterstitialAd.setAdUnitId(getString(R.string.admob_interstitial));
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getString(R.string.admob_interstitial));
+        mHandler = new Handler();
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        mHandler.postDelayed(mRunnableStart, 2000);
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "ImageActivity");
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
-        mAdView = (AdView) findViewById(R.id.adView);
-        mAdView.setVisibility(View.GONE);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-        mAdView.setAdListener(new AdListener(){
+
+        ViewGroup.LayoutParams wrapParams = new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        final AdView adViewBottom;
+        adViewBottom = new AdView(this);
+        adViewBottom.setLayoutParams(wrapParams);
+        adViewBottom.setAdUnitId(getResources().getString(R.string.admob_banner_id));
+        adViewBottom.setAdSize(AdSize.BANNER);
+        adViewBottom.setVisibility(View.GONE);
+        AdRequest adRequestBottom = new AdRequest.Builder().build();
+        adContainerBottom.addView(adViewBottom);
+
+        adViewBottom.loadAd(adRequestBottom);
+        adViewBottom.setAdListener(new AdListener(){
             @Override
             public void onAdLoaded() {
-                mAdView.setVisibility(View.VISIBLE);
+                adViewBottom.setVisibility(View.VISIBLE);
             }
         });
 
