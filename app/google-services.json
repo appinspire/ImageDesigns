@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "395305189251",
-    "firebase_url": "https://couple-ring-designs-bae9c.firebaseio.com",
-    "project_id": "couple-ring-designs-bae9c",
-    "storage_bucket": "couple-ring-designs-bae9c.appspot.com"
+    "project_number": "63551883081",
+    "firebase_url": "https://baseproject-a9259.firebaseio.com",
+    "project_id": "baseproject-a9259",
+    "storage_bucket": "baseproject-a9259.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:395305189251:android:f335582a055f7a91",
+        "mobilesdk_app_id": "1:63551883081:android:3f67636e0e9ee64c",
         "android_client_info": {
-          "package_name": "com.optimisedapps.rings"
+          "package_name": "com.optimisedapps.ringdesigns"
         }
       },
       "oauth_client": [
         {
-          "client_id": "395305189251-bm320ht7o4pvsmvp8pdk8tu6tji47vau.apps.googleusercontent.com",
+          "client_id": "63551883081-vdrbg24rnh0q1qsch9hejafdegfcqrq9.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAgSy1L8QyDkxbE7nLiXIaJ4kX4htkQg14"
+          "current_key": "AIzaSyCPn7tC3TCp7HQ3JH1zKEpyFXZx0EO3YE4"
         }
       ],
       "services": {
