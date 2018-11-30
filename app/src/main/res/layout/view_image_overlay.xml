@@ -3,27 +3,29 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adView_top"
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/ad_container_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/admob_banner_id">
-    </com.google.android.gms.ads.AdView>
+        >
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adView_bottom"
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ad_container_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_alignParentBottom="true"
-        ads:adSize="BANNER"
         android:gravity="center"
-        ads:adUnitId="@string/admob_banner_id">
-    </com.google.android.gms.ads.AdView>
+        >
+
+    </LinearLayout>
+
+
 
 </merge>

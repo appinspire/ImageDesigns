@@ -4,10 +4,13 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 
 /**
@@ -16,8 +19,8 @@ import com.google.android.gms.ads.AdView;
 
 public class ImageOverlayView extends RelativeLayout {
 
-    private AdView mAdView;
-    private AdView mAdView2;
+
+    private LinearLayout mContainerTop,mContainerBottom;
 
     public ImageOverlayView(Context context) {
         super(context);
@@ -36,16 +39,30 @@ public class ImageOverlayView extends RelativeLayout {
 
     private void init() {
         View view = inflate(getContext(), R.layout.view_image_overlay, this);
-        mAdView = (AdView) view.findViewById(R.id.adView_top);
-        mAdView2 = (AdView) view.findViewById(R.id.adView_bottom);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-        mAdView2.loadAd(adRequest);
-        mAdView.setAdListener(new AdListener(){
-            @Override
-            public void onAdLoaded() {
-                Log.d("TAAAG","jjjjjjjjjjjjjjjjjjj");
-            }
-        });
+        mContainerBottom = (LinearLayout) view.findViewById(R.id.ad_container_bottom);
+        mContainerTop = (LinearLayout) view.findViewById(R.id.ad_container_top);
+        ViewGroup.LayoutParams wrapParams = new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        AdView adViewTop,adViewBottom;
+        adViewTop = new AdView(getContext());
+        adViewBottom = new AdView(getContext());
+
+        adViewTop.setLayoutParams(wrapParams);
+        adViewTop.setAdUnitId(getResources().getString(R.string.admob_banner_id));
+        adViewTop.setAdSize(AdSize.BANNER);
+
+        adViewBottom.setLayoutParams(wrapParams);
+        adViewBottom.setAdUnitId(getResources().getString(R.string.admob_banner_id));
+        adViewBottom.setAdSize(AdSize.BANNER);
+
+        AdRequest adRequestTop = new AdRequest.Builder().build();
+        AdRequest adRequestBottom = new AdRequest.Builder().build();
+
+        mContainerTop.addView(adViewTop);
+        mContainerBottom.addView(adViewBottom);
+
+        adViewTop.loadAd(adRequestTop);
+        adViewBottom.loadAd(adRequestBottom);
+
     }
 }
