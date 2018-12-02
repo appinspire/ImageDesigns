@@ -4,9 +4,11 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 
 import com.amanapps.imagedesigns.models.Configuration;
 import com.amanapps.imagedesigns.utils.Constants;
@@ -32,6 +34,7 @@ public class ImagesActivity extends AppCompatActivity {
     private InterstitialAd mInterstitialAd;
     Configuration mConfiguration;
     private DatabaseReference mDatabase;
+    public ProgressBar progressBar;
     LinearLayout layoutParent,adContainerBottom;
     private final int REFRESH_TIME_SECONDS = 1 * 1000;
     private Handler mHandler;
@@ -55,17 +58,20 @@ public class ImagesActivity extends AppCompatActivity {
     private FirebaseAnalytics mFirebaseAnalytics;
 
     ValueEventListener valueEventListener;
-    protected String[] posters, descriptions;
+    protected List<String> posters;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo);
         layoutParent = (LinearLayout) findViewById(R.id.parent_layout);
         adContainerBottom = (LinearLayout) findViewById(R.id.ad_container_bottom);
+        progressBar = (ProgressBar) findViewById(R.id.progress);
+        progressBar.setVisibility(View.VISIBLE);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         valueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                progressBar.setVisibility(View.GONE);
                 mConfiguration = dataSnapshot.getValue(Configuration.class);
                 PrefUtils.persistString(ImagesActivity.this, Constants.BANNER_ID,mConfiguration.admob_banner_id);
                 setupMainAds();
@@ -75,6 +81,7 @@ public class ImagesActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+                progressBar.setVisibility(View.GONE);
 
             }
         };
@@ -164,8 +171,7 @@ public class ImagesActivity extends AppCompatActivity {
                 ViewGroup.LayoutParams.MATCH_PARENT, AppUtils.dpToPx(300));
 
 
-        posters = Demo.getPosters();
-        descriptions = Demo.getDescriptions();
+        posters = Demo.getPosters(mConfiguration.diamond_url,mConfiguration.total_pictures);
         int adPosition = 0;
 
         for (int i = 0; i < mConfiguration.total_pictures; i++) {
@@ -187,13 +193,14 @@ public class ImagesActivity extends AppCompatActivity {
         }
     }
     private void initDrawee(SimpleDraweeView drawee, final int startPosition) {
+        Log.d("TAAAG",""+posters.get(startPosition));
         drawee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showPicker(startPosition);
             }
         });
-        drawee.setImageURI(posters[startPosition]);
+        drawee.setImageURI(posters.get(startPosition));
     }
 
     @Override

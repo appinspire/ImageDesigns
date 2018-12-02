@@ -257,8 +257,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.designs:
-                startActivity(new Intent(this,ImagesActivity.class));
-                break;
+                if(AppUtils.isInternetAvailable(this)){
+                    startActivity(new Intent(this,ImagesActivity.class));
+                }else {
+                    showSimpleDialog("Network Error","Please connect to internet");
+                }
         }
 
     }
