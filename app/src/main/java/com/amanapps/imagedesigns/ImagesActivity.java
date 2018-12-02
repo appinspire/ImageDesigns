@@ -171,13 +171,13 @@ public class ImagesActivity extends AppCompatActivity {
                 ViewGroup.LayoutParams.MATCH_PARENT, AppUtils.dpToPx(300));
 
 
-        posters = Demo.getPosters(mConfiguration.diamond_url,mConfiguration.total_pictures);
+        posters = Demo.getPosters(mConfiguration.promise_url,mConfiguration.total_pictures);
         int adPosition = 0;
 
         for (int i = 0; i < mConfiguration.total_pictures; i++) {
             SimpleDraweeView simpleDraweeView =new SimpleDraweeView(this);
 
-            simpleDraweeView.setBackgroundResource(R.drawable.placeholder);
+            simpleDraweeView.setBackgroundResource(R.drawable.ring_placeholder);
             simpleDraweeView.setLayoutParams(lparams);
             this.layoutParent.addView(simpleDraweeView);
             AdRequest adRequestBanner;
