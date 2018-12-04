@@ -258,7 +258,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.designs:
                 if(AppUtils.isInternetAvailable(this)){
-                    startActivity(new Intent(this,ImagesActivity.class));
+                    startActivity(new Intent(this,CategoryActivity.class));
                 }else {
                     showSimpleDialog("Network Error","Please connect to internet");
                 }
