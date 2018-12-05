@@ -7,4 +7,5 @@ package com.amanapps.imagedesigns.utils;
 public class Constants {
     public static final String FIRST_RUN = "first_time_run";
     public static final String BANNER_ID= "admob_banner_id";
+    public static final String DATA= "data";
 }

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
+import com.amanapps.imagedesigns.enums.CategoryEnum;
 import com.amanapps.imagedesigns.models.Configuration;
 import com.amanapps.imagedesigns.utils.Constants;
 import com.amanapps.imagedesigns.utils.PrefUtils;
@@ -55,8 +56,8 @@ public class ImagesActivity extends AppCompatActivity {
         }
     };
 
+    int mCategory;
     private FirebaseAnalytics mFirebaseAnalytics;
-
     ValueEventListener valueEventListener;
     protected List<String> posters;
     @Override
@@ -66,6 +67,7 @@ public class ImagesActivity extends AppCompatActivity {
         layoutParent = (LinearLayout) findViewById(R.id.parent_layout);
         adContainerBottom = (LinearLayout) findViewById(R.id.ad_container_bottom);
         progressBar = (ProgressBar) findViewById(R.id.progress);
+        mCategory = getIntent().getIntExtra(Constants.DATA,0);
         progressBar.setVisibility(View.VISIBLE);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         valueEventListener = new ValueEventListener() {
@@ -137,6 +139,33 @@ public class ImagesActivity extends AppCompatActivity {
                 .show();
     }
     List<AdView> adViewList;
+    public List<String> getPosters(int category){
+        if(category == CategoryEnum.COUPLE.getValue()){
+            return Demo.getPosters(mConfiguration.couple_url,mConfiguration.total_pictures);
+        }
+        else if(category == CategoryEnum.DIAMOND.getValue()){
+            return Demo.getPosters(mConfiguration.diamond_url,mConfiguration.total_pictures);
+        }
+        else if(category == CategoryEnum.ENGAGEMENT.getValue()){
+            return Demo.getPosters(mConfiguration.engagement_url,mConfiguration.total_pictures);
+        }
+        else if(category == CategoryEnum.WEDDING.getValue()){
+            return Demo.getPosters(mConfiguration.wedding_url,mConfiguration.total_pictures);
+        }
+        else if(category == CategoryEnum.JEWELLERY.getValue()){
+            return Demo.getPosters(mConfiguration.jewelry_url,mConfiguration.total_pictures);
+        }
+        else if(category == CategoryEnum.NEW.getValue()){
+            return Demo.getPosters(mConfiguration.new_ring_url,mConfiguration.total_pictures);
+        }
+        else if(category == CategoryEnum.UNIQUE.getValue()){
+            return Demo.getPosters(mConfiguration.unique_url,mConfiguration.total_pictures);
+        }
+        else {
+            return Demo.getPosters(mConfiguration.promise_url,mConfiguration.total_pictures);
+        }
+    }
+
     public void initAds(){
         int total_ads = mConfiguration.total_pictures/mConfiguration.interval_ad;
         total_ads=total_ads-1;
@@ -171,17 +200,17 @@ public class ImagesActivity extends AppCompatActivity {
                 ViewGroup.LayoutParams.MATCH_PARENT, AppUtils.dpToPx(300));
 
 
-        posters = Demo.getPosters(mConfiguration.promise_url,mConfiguration.total_pictures);
+        posters = getPosters(mCategory);
         int adPosition = 0;
 
         for (int i = 0; i < mConfiguration.total_pictures; i++) {
-            SimpleDraweeView simpleDraweeView =new SimpleDraweeView(this);
 
+            SimpleDraweeView simpleDraweeView =new SimpleDraweeView(this);
             simpleDraweeView.setBackgroundResource(R.drawable.ring_placeholder);
             simpleDraweeView.setLayoutParams(lparams);
             this.layoutParent.addView(simpleDraweeView);
             AdRequest adRequestBanner;
-            if((i+1)%mConfiguration.interval_ad==0 && (i+1) !=mConfiguration.total_pictures){
+            if((i+1) % mConfiguration.interval_ad == 0 && (i+1) != mConfiguration.total_pictures){
                 adRequestBanner = new AdRequest.Builder().build();
                 this.layoutParent.addView(adViewList.get(adPosition));
                 adViewList.get(adPosition).loadAd(adRequestBanner);
