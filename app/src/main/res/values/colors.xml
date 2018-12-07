@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#b71c1c</color>
-    <color name="colorPrimaryDark">#7f0000</color>
-    <color name="colorAccent">#f05545</color>
+    <color name="colorPrimary">#795548</color>
+    <color name="colorPrimaryDark">#4b2c20</color>
+    <color name="colorAccent">#a98274</color>
     <color name="colorSimpleDialogTitleText">#FFFFFF</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorLightGrey">#eae4e4</color>
+    <color name="colorLightGrey2">#d6bcb2</color>
     <color name="galleryBg">#757575</color>
     <color name="galleryItemOverlay">#cc000000</color>
     <color name="colorMainBg">#757575</color>

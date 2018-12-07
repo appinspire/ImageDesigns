@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">Bridal Mehandi Designs</string>
-    <string name="splash_text">Bridal Mehandi Designs</string>
+    <string name="app_name">Ring Designs</string>
+    <string name="splash_text">Ring Designs</string>
     <string name="msg_exit">Are you sure you want to exit?</string>
     <string name="button_cancel">Cancel</string>
     <string name="button_confirm">Confirm</string>
     <string name="button_ok">OK</string>
-    <string name="company"><b>A P P   I N S P I R E</b></string>
+    <string name="company"><b>O P T I M I S E D \u0020 \u0020 \u0020 \u0020A P P S</b></string>
 
-    <string name="disclaimer">We do not claim copyrights of any content provided in this app, all content is the copyright of their respective owners. No copyright infringement is intended, you can contact us on mobstudios.tech@gmail.com , If the content belongs to you and you want it to be removed. We value your creation.
+    <string name="disclaimer">We do not claim copyrights of any content provided in this app, all content is the copyright oftheir respective owners.\nNo copyright infringement is intended, you can contact us on optimisedapps@gmail.com, If the content belongs to you and you want it to be removed. We value your creation.
 Cheers!</string>
     <string name="about_us">About us ddnkasndkaj dasjdaskd djlasd jdsak asdjasjd asdjj</string>
 </resources>
