@@ -16,6 +16,8 @@ public class Configuration {
     public String promise_url;
     public String unique_url;
     public String wedding_url;
+    public String playstore_url;
+    public String privacy_policy;
     public boolean interstitial_enable;
     public int interval_ad;
     public int total_pictures;

@@ -7,7 +7,15 @@
     <string name="button_ok">OK</string>
     <string name="company"><b>O P T I M I S E D \u0020 \u0020 \u0020 \u0020A P P S</b></string>
 
-    <string name="disclaimer">We do not claim copyrights of any content provided in this app, all content is the copyright oftheir respective owners.\nNo copyright infringement is intended, you can contact us on optimisedapps@gmail.com, If the content belongs to you and you want it to be removed. We value your creation.
-Cheers!</string>
+    <string name="disclaimer">The content provided in this mobile  application is available free on
+public domains. We have just compiled the designs from various internet sources.
+If there is a copyright or trademark violation from us then do let us know
+via the email(optimisedapps@gmail.com). We VALUE your creations.</string>
+    <string name="privacy">latest and fancy Ring Designs ("us", "we", or "our") operates the latest and fancy Ring Designs mobile application (the "Service").\n
+This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.\n
+We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions.\n
+        <b><i>Information Collection and Use</i></b>\n
+        We collect several different types of information for various purposes to provide and improve our Service to you.\n
+</string>
     <string name="about_us">About us ddnkasndkaj dasjdaskd djlasd jdsak asdjasjd asdjj</string>
 </resources>

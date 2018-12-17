@@ -11,65 +11,69 @@
         card_view:cardBackgroundColor="@color/colorWhite"
         card_view:cardCornerRadius="4dp"
         card_view:cardElevation="4dp">
-
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/text_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorDialogToolbar"
-                android:gravity="center"
-                android:padding="16dp"
-                android:text=""
-                android:textColor="@color/colorSimpleDialogTitleText"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:visibility="gone" />
-
+            android:layout_height="match_parent">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/spacing_large"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/text_message"
+                    android:id="@+id/text_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="13sp"
+                    android:background="@color/colorDialogToolbar"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:text=""
+                    android:textColor="@color/colorSimpleDialogTitleText"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
                     android:visibility="gone" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_large"
-                    android:orientation="horizontal">
+                    android:layout_margin="@dimen/spacing_large"
+                    android:orientation="vertical">
 
-                    <Button
-                        android:id="@+id/button_negative"
-                        style="@style/simpleButton"
-                        android:layout_width="0dp"
-                        android:layout_weight="0.5"
+                    <TextView
+                        android:id="@+id/text_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="13sp"
                         android:visibility="gone" />
 
-                    <Space
-                        android:layout_width="@dimen/spacing_small"
-                        android:layout_height="wrap_content" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_large"
+                        android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/button_positive"
-                        style="@style/simpleButton"
-                        android:layout_width="0dp"
-                        android:layout_weight="0.5"
-                        android:visibility="gone" />
+                        <Button
+                            android:id="@+id/button_negative"
+                            style="@style/simpleButton"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:visibility="gone" />
+
+                        <Space
+                            android:layout_width="@dimen/spacing_small"
+                            android:layout_height="wrap_content" />
+
+                        <Button
+                            android:id="@+id/button_positive"
+                            style="@style/simpleButton"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:visibility="gone" />
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
+        </ScrollView>
+
     </android.support.v7.widget.CardView>
 
 </LinearLayout>

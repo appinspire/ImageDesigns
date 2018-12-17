@@ -75,6 +75,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 mConfiguration = dataSnapshot.getValue(Configuration.class);
+                if(!PrefUtils.getBoolean(MainActivity.this, Constants.FIRST_RUN,false)){
+                    showPrivacy();
+//                    PrefUtils.persistBoolean(MainActivity.this,Constants.FIRST_RUN,true);
+                }
                 setupAds();
 
             }
@@ -105,10 +109,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         RateThisApp.Config config = new RateThisApp.Config(2, 2);
         RateThisApp.init(config);
         RateThisApp.showRateDialogIfNeeded(this);
-        if(!PrefUtils.getBoolean(this, Constants.FIRST_RUN,false)){
-            showDisclaimer();
-            PrefUtils.persistBoolean(this,Constants.FIRST_RUN,true);
-        }
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "MainActivity");
@@ -172,6 +172,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void showDisclaimer(){
         showSimpleDialog("Disclaimer",getString(R.string.disclaimer));
     }
+    public void showPrivacy(){
+        if(mConfiguration!=null) {
+            showSimpleDialogP("Privacy Policy", mConfiguration.privacy_policy);
+        }
+    }
 
     private void showSimpleDialog(String title, String content) {
         mSimpleDialog = new SimpleDialog(this, title, content,null,"Ok"
@@ -188,6 +193,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         });
+        mSimpleDialog.setCancelable(false);
+        mSimpleDialog.show();
+    }
+    private void showSimpleDialogP(String title, String content) {
+        mSimpleDialog = new SimpleDialog(this, title, content,null,"Agree"
+                , new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()) {
+                    case R.id.button_positive:
+                        mSimpleDialog.dismiss();
+                        if(!PrefUtils.getBoolean(MainActivity.this, Constants.FIRST_RUN,false)){
+                            showDisclaimer();
+                            PrefUtils.persistBoolean(MainActivity.this,Constants.FIRST_RUN,true);
+                        }
+                        break;
+                    case R.id.button_negative:
+                        mSimpleDialog.dismiss();
+                        showDisclaimer();
+                        break;
+                }
+            }
+        });
+        mSimpleDialog.setCancelable(false);
         mSimpleDialog.show();
     }
 
@@ -216,10 +245,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.more_apps:
                 try {
                     startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("market://search?q=pub:Mob Studios")));
+                            Uri.parse("market://search?q=pub:"+mConfiguration.playstore_url)));
                 } catch (android.content.ActivityNotFoundException e) {
                     startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("http://play.google.com/store/search?q=pub:Mob Studios")));
+                            Uri.parse("http://play.google.com/store/search?q=pub:"+mConfiguration.playstore_url)));
                 }
                 break;
             case R.id.imageView7:
@@ -235,7 +264,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.card_privacy:
-                showDisclaimer();
+                showPrivacy();
 //                try {
 //                    startActivity(new Intent(Intent.ACTION_VIEW,
 //                            Uri.parse("market://details?id=" + "com.appinspire.fingermehandidesigns")));

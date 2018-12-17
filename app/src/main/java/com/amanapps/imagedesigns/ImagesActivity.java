@@ -95,13 +95,6 @@ public class ImagesActivity extends AppCompatActivity {
 
     }
     public void setupMainAds(){
-        if(mConfiguration.interstitial_enable) {
-            mInterstitialAd = new InterstitialAd(this);
-            mInterstitialAd.setAdUnitId(mConfiguration.admob_interstitial_id);
-            mHandler = new Handler();
-            mInterstitialAd.loadAd(new AdRequest.Builder().build());
-            mHandler.postDelayed(mRunnableStart, 2000);
-        }
         ViewGroup.LayoutParams wrapParams = new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         final AdView adViewBottom;
@@ -222,7 +215,7 @@ public class ImagesActivity extends AppCompatActivity {
         }
     }
     private void initDrawee(SimpleDraweeView drawee, final int startPosition) {
-        Log.d("TAAAG",""+posters.get(startPosition));
+//        Log.d("TAAAG",""+posters.get(startPosition));
         drawee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -236,5 +229,17 @@ public class ImagesActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         mDatabase.child("ringdesigns").removeEventListener(valueEventListener);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        if(mConfiguration.interstitial_enable) {
+            mInterstitialAd = new InterstitialAd(this);
+            mInterstitialAd.setAdUnitId(mConfiguration.admob_interstitial_id);
+            mHandler = new Handler();
+            mInterstitialAd.loadAd(new AdRequest.Builder().build());
+            mHandler.postDelayed(mRunnableStart, 2000);
+        }
     }
 }
