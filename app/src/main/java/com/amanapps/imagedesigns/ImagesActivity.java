@@ -239,7 +239,7 @@ public class ImagesActivity extends AppCompatActivity {
             mInterstitialAd.setAdUnitId(mConfiguration.admob_interstitial_id);
             mHandler = new Handler();
             mInterstitialAd.loadAd(new AdRequest.Builder().build());
-            mHandler.postDelayed(mRunnableStart, 2000);
+            mHandler.postDelayed(mRunnableStart, 1000);
         }
     }
 }

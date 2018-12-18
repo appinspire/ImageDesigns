@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.amanapps.imagedesigns.dialog.SimpleDialog;
 import com.amanapps.imagedesigns.models.Configuration;
@@ -175,6 +176,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void showPrivacy(){
         if(mConfiguration!=null) {
             showSimpleDialogP("Privacy Policy", mConfiguration.privacy_policy);
+        }else {
+            Toast.makeText(this,"Can't connect right now, please wait",Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -243,12 +246,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.more_apps:
-                try {
-                    startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("market://search?q=pub:"+mConfiguration.playstore_url)));
-                } catch (android.content.ActivityNotFoundException e) {
-                    startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("http://play.google.com/store/search?q=pub:"+mConfiguration.playstore_url)));
+                if(mConfiguration!=null) {
+                    try {
+                        startActivity(new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("market://search?q=pub:" + mConfiguration.playstore_url)));
+                    } catch (android.content.ActivityNotFoundException e) {
+                        startActivity(new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("http://play.google.com/store/search?q=pub:" + mConfiguration.playstore_url)));
+                    }
+                }else {
+                    Toast.makeText(this,"Can't connect right now, please wait",Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.imageView7:
