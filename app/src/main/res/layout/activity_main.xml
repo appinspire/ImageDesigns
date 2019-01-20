@@ -38,14 +38,14 @@
                         android:layout_weight="8"
                         android:scaleType="centerCrop"
                         android:background="@color/colorLightGrey2"
-                        android:src="@drawable/ring_cover"
+                        android:src="@drawable/earing_cover"
                         android:layout_height="0dp" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_weight="2"
                         android:textSize="21sp"
                         android:gravity="center"
-                        android:text="Ring Designs"
+                        android:text="Earring Designs"
                         android:layout_height="0dp" />
 
                 </LinearLayout>

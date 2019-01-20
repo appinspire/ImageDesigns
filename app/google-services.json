@@ -8,6 +8,37 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:63551883081:android:b0477f9f80c5ab93",
+        "android_client_info": {
+          "package_name": "com.optimisedapps.earringdesigns"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "63551883081-vdrbg24rnh0q1qsch9hejafdegfcqrq9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPn7tC3TCp7HQ3JH1zKEpyFXZx0EO3YE4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:63551883081:android:3f67636e0e9ee64c",
         "android_client_info": {
           "package_name": "com.optimisedapps.ringdesigns"

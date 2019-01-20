@@ -87,7 +87,7 @@ public class ImagesActivity extends AppCompatActivity {
 
             }
         };
-        mDatabase.child("ringdesigns").addValueEventListener(valueEventListener);
+        mDatabase.child(Constants.APP_NAME).addValueEventListener(valueEventListener);
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "ImageActivity");
@@ -133,29 +133,29 @@ public class ImagesActivity extends AppCompatActivity {
     }
     List<AdView> adViewList;
     public List<String> getPosters(int category){
-        if(category == CategoryEnum.COUPLE.getValue()){
-            return Demo.getPosters(mConfiguration.couple_url,mConfiguration.total_pictures);
+        if(category == CategoryEnum.BEAUTIFUL.getValue()){
+            return Demo.getPosters(mConfiguration.beautiful_url,mConfiguration.total_pictures);
         }
-        else if(category == CategoryEnum.DIAMOND.getValue()){
-            return Demo.getPosters(mConfiguration.diamond_url,mConfiguration.total_pictures);
+        else if(category == CategoryEnum.TRENDY.getValue()){
+            return Demo.getPosters(mConfiguration.trendy_url,mConfiguration.total_pictures);
         }
-        else if(category == CategoryEnum.ENGAGEMENT.getValue()){
-            return Demo.getPosters(mConfiguration.engagement_url,mConfiguration.total_pictures);
+        else if(category == CategoryEnum.SILK.getValue()){
+            return Demo.getPosters(mConfiguration.silk_url,mConfiguration.total_pictures);
         }
-        else if(category == CategoryEnum.WEDDING.getValue()){
-            return Demo.getPosters(mConfiguration.wedding_url,mConfiguration.total_pictures);
+        else if(category == CategoryEnum.LATEST.getValue()){
+            return Demo.getPosters(mConfiguration.latest_url,mConfiguration.total_pictures);
         }
         else if(category == CategoryEnum.JEWELLERY.getValue()){
             return Demo.getPosters(mConfiguration.jewelry_url,mConfiguration.total_pictures);
         }
-        else if(category == CategoryEnum.NEW.getValue()){
-            return Demo.getPosters(mConfiguration.new_ring_url,mConfiguration.total_pictures);
+        else if(category == CategoryEnum.NEW_DIAMOND.getValue()){
+            return Demo.getPosters(mConfiguration.new_url,mConfiguration.total_pictures);
         }
-        else if(category == CategoryEnum.UNIQUE.getValue()){
-            return Demo.getPosters(mConfiguration.unique_url,mConfiguration.total_pictures);
+        else if(category == CategoryEnum.WOMEN.getValue()){
+            return Demo.getPosters(mConfiguration.women_url,mConfiguration.total_pictures);
         }
         else {
-            return Demo.getPosters(mConfiguration.promise_url,mConfiguration.total_pictures);
+            return Demo.getPosters(mConfiguration.modern_url,mConfiguration.total_pictures);
         }
     }
 
@@ -228,7 +228,7 @@ public class ImagesActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        mDatabase.child("ringdesigns").removeEventListener(valueEventListener);
+        mDatabase.child(Constants.APP_NAME).removeEventListener(valueEventListener);
     }
 
     @Override

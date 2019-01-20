@@ -28,7 +28,8 @@ public class CategoryActivity extends AppCompatActivity  implements View.OnClick
 
     LinearLayout adContainerBottom, adContainerTop;
     String banner_id;
-    Button buttonNew,buttonJewelry,buttonPromise,buttonDiamond,buttonCouple,buttonWedding,buttonUnique,buttonEngagement;
+    Button buttonBeautiful,buttonJewelry,buttonlatest,buttonModern,buttonNewDiamond,
+            buttonSilkThread,buttonTrendy,buttonWomen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,22 +40,22 @@ public class CategoryActivity extends AppCompatActivity  implements View.OnClick
         if(banner_id!=null){
             setupMainAds();
         }
-        buttonCouple = (Button) findViewById(R.id.btn_couple);
-        buttonDiamond = (Button) findViewById(R.id.btn_diamond);
-        buttonEngagement = (Button) findViewById(R.id.btn_engagement);
-        buttonNew = (Button) findViewById(R.id.btn_new);
-        buttonPromise = (Button) findViewById(R.id.btn_promise);
-        buttonUnique = (Button) findViewById(R.id.btn_unique);
-        buttonWedding = (Button) findViewById(R.id.btn_wedding);
+        buttonBeautiful = (Button) findViewById(R.id.btn_beautiful);
+        buttonlatest = (Button) findViewById(R.id.btn_latest);
+        buttonModern = (Button) findViewById(R.id.btn_modern);
+        buttonNewDiamond = (Button) findViewById(R.id.btn_diamond);
+        buttonSilkThread = (Button) findViewById(R.id.btn_silk);
+        buttonTrendy = (Button) findViewById(R.id.btn_trendy);
+        buttonWomen = (Button) findViewById(R.id.btn_women);
         buttonJewelry = (Button) findViewById(R.id.btn_jewellery);
 
-        buttonCouple.setOnClickListener(this);
-        buttonDiamond.setOnClickListener(this);
-        buttonEngagement.setOnClickListener(this);
-        buttonNew.setOnClickListener(this);
-        buttonPromise.setOnClickListener(this);
-        buttonUnique.setOnClickListener(this);
-        buttonWedding.setOnClickListener(this);
+        buttonBeautiful.setOnClickListener(this);
+        buttonlatest.setOnClickListener(this);
+        buttonModern.setOnClickListener(this);
+        buttonNewDiamond.setOnClickListener(this);
+        buttonSilkThread.setOnClickListener(this);
+        buttonTrendy.setOnClickListener(this);
+        buttonWomen.setOnClickListener(this);
         buttonJewelry.setOnClickListener(this);
 
     }
@@ -102,35 +103,35 @@ public class CategoryActivity extends AppCompatActivity  implements View.OnClick
         int id = view.getId();
         Intent intent = new Intent(this,ImagesActivity.class);
         switch (id) {
-            case R.id.btn_couple:
-                intent.putExtra(Constants.DATA, CategoryEnum.COUPLE.getValue());
+            case R.id.btn_beautiful:
+                intent.putExtra(Constants.DATA, CategoryEnum.BEAUTIFUL.getValue());
                 startActivity(intent);
                 break;
             case R.id.btn_diamond:
-                intent.putExtra(Constants.DATA, CategoryEnum.DIAMOND.getValue());
-                startActivity(intent);
-                break;
-            case R.id.btn_engagement:
-                intent.putExtra(Constants.DATA, CategoryEnum.ENGAGEMENT.getValue());
-                startActivity(intent);
-                break;
-            case R.id.btn_new:
-                intent.putExtra(Constants.DATA, CategoryEnum.NEW.getValue());
-                startActivity(intent);
-                break;
-            case R.id.btn_promise:
-                intent.putExtra(Constants.DATA, CategoryEnum.PROMISE.getValue());
-                startActivity(intent);
-                break;
-            case R.id.btn_unique:
-                intent.putExtra(Constants.DATA, CategoryEnum.UNIQUE.getValue());
-                startActivity(intent);
-                break;
-            case R.id.btn_wedding:
-                intent.putExtra(Constants.DATA, CategoryEnum.WEDDING.getValue());
+                intent.putExtra(Constants.DATA, CategoryEnum.NEW_DIAMOND.getValue());
                 startActivity(intent);
                 break;
             case R.id.btn_jewellery:
+                intent.putExtra(Constants.DATA, CategoryEnum.JEWELLERY.getValue());
+                startActivity(intent);
+                break;
+            case R.id.btn_latest:
+                intent.putExtra(Constants.DATA, CategoryEnum.LATEST.getValue());
+                startActivity(intent);
+                break;
+            case R.id.btn_modern:
+                intent.putExtra(Constants.DATA, CategoryEnum.MODERN.getValue());
+                startActivity(intent);
+                break;
+            case R.id.btn_silk:
+                intent.putExtra(Constants.DATA, CategoryEnum.SILK.getValue());
+                startActivity(intent);
+                break;
+            case R.id.btn_trendy:
+                intent.putExtra(Constants.DATA, CategoryEnum.TRENDY.getValue());
+                startActivity(intent);
+                break;
+            case R.id.btn_women:
                 intent.putExtra(Constants.DATA, CategoryEnum.JEWELLERY.getValue());
                 startActivity(intent);
                 break;

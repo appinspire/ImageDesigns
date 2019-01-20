@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         };
-        mDatabase.child("ringdesigns").addValueEventListener(valueEventListener);
+        mDatabase.child(Constants.APP_NAME).addValueEventListener(valueEventListener);
         designs_card = (CardView) findViewById(R.id.designs);
         share_app_card = (CardView) findViewById(R.id.share_app);
         more_apps_card = (CardView) findViewById(R.id.more_apps);
@@ -239,7 +239,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onPause() {
         super.onPause();
-        mDatabase.child("ringdesigns").removeEventListener(valueEventListener);
+        mDatabase.child(Constants.APP_NAME).removeEventListener(valueEventListener);
     }
 
     @Override

@@ -5,13 +5,13 @@ package com.amanapps.imagedesigns.enums;
  */
 
 public enum CategoryEnum {
-    COUPLE(1),
-    ENGAGEMENT(2),
-    WEDDING(3),
-    PROMISE(4),
-    NEW(5),
-    UNIQUE(6),
-    DIAMOND(7),
+    BEAUTIFUL(1),
+    LATEST(2),
+    MODERN(3),
+    NEW_DIAMOND(4),
+    SILK(5),
+    TRENDY(6),
+    WOMEN(7),
     JEWELLERY(8);
 
     private final int id;
