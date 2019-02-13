@@ -4,7 +4,6 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -136,26 +135,20 @@ public class ImagesActivity extends AppCompatActivity {
         if(category == CategoryEnum.BEAUTIFUL.getValue()){
             return Demo.getPosters(mConfiguration.beautiful_url,mConfiguration.total_pictures);
         }
-        else if(category == CategoryEnum.TRENDY.getValue()){
-            return Demo.getPosters(mConfiguration.trendy_url,mConfiguration.total_pictures);
+        else if(category == CategoryEnum.CHOKER.getValue()){
+            return Demo.getPosters(mConfiguration.choker_url,mConfiguration.total_pictures);
         }
-        else if(category == CategoryEnum.SILK.getValue()){
-            return Demo.getPosters(mConfiguration.silk_url,mConfiguration.total_pictures);
+        else if(category == CategoryEnum.DIAMOND.getValue()){
+            return Demo.getPosters(mConfiguration.diamond_url,mConfiguration.total_pictures);
         }
-        else if(category == CategoryEnum.LATEST.getValue()){
-            return Demo.getPosters(mConfiguration.latest_url,mConfiguration.total_pictures);
+        else if(category == CategoryEnum.GOLD.getValue()){
+            return Demo.getPosters(mConfiguration.gold_url,mConfiguration.total_pictures);
         }
-        else if(category == CategoryEnum.JEWELLERY.getValue()){
-            return Demo.getPosters(mConfiguration.jewelry_url,mConfiguration.total_pictures);
-        }
-        else if(category == CategoryEnum.NEW_DIAMOND.getValue()){
-            return Demo.getPosters(mConfiguration.new_url,mConfiguration.total_pictures);
-        }
-        else if(category == CategoryEnum.WOMEN.getValue()){
-            return Demo.getPosters(mConfiguration.women_url,mConfiguration.total_pictures);
+        else if(category == CategoryEnum.LETTER.getValue()){
+            return Demo.getPosters(mConfiguration.letter_url,mConfiguration.total_pictures);
         }
         else {
-            return Demo.getPosters(mConfiguration.modern_url,mConfiguration.total_pictures);
+            return Demo.getPosters(mConfiguration.women_url,mConfiguration.total_pictures);
         }
     }
 

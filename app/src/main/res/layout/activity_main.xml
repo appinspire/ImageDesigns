@@ -2,7 +2,7 @@
 <android.support.constraint.ConstraintLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
-    android:background="@color/colorLightGrey"
+    android:background="@drawable/background_app"
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity"
@@ -45,7 +45,7 @@
                         android:layout_weight="2"
                         android:textSize="21sp"
                         android:gravity="center"
-                        android:text="Earring Designs"
+                        android:text="@string/app_name"
                         android:layout_height="0dp" />
 
                 </LinearLayout>
