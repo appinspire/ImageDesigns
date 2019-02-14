@@ -132,23 +132,23 @@ public class ImagesActivity extends AppCompatActivity {
     }
     List<AdView> adViewList;
     public List<String> getPosters(int category){
-        if(category == CategoryEnum.BEAUTIFUL.getValue()){
-            return Demo.getPosters(mConfiguration.beautiful_url,mConfiguration.total_pictures);
+        if(category == CategoryEnum.BEADS.getValue()){
+            return Demo.getPosters(mConfiguration.beads_url,mConfiguration.total_pictures);
         }
-        else if(category == CategoryEnum.CHOKER.getValue()){
-            return Demo.getPosters(mConfiguration.choker_url,mConfiguration.total_pictures);
+        else if(category == CategoryEnum.FRIENDSHIP.getValue()){
+            return Demo.getPosters(mConfiguration.friendship_url,mConfiguration.total_pictures);
         }
-        else if(category == CategoryEnum.DIAMOND.getValue()){
-            return Demo.getPosters(mConfiguration.diamond_url,mConfiguration.total_pictures);
+        else if(category == CategoryEnum.BANGLE.getValue()){
+            return Demo.getPosters(mConfiguration.bangle_url,mConfiguration.total_pictures);
         }
         else if(category == CategoryEnum.GOLD.getValue()){
             return Demo.getPosters(mConfiguration.gold_url,mConfiguration.total_pictures);
         }
-        else if(category == CategoryEnum.LETTER.getValue()){
-            return Demo.getPosters(mConfiguration.letter_url,mConfiguration.total_pictures);
+        else if(category == CategoryEnum.RUBBER.getValue()){
+            return Demo.getPosters(mConfiguration.rubber_url,mConfiguration.total_pictures);
         }
         else {
-            return Demo.getPosters(mConfiguration.women_url,mConfiguration.total_pictures);
+            return Demo.getPosters(mConfiguration.simple_url,mConfiguration.total_pictures);
         }
     }
 

@@ -12,7 +12,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:src="@drawable/pendant"
+        android:src="@drawable/bracelet"
         app:layout_constraintBottom_toTopOf="@+id/text_appname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

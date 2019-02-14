@@ -73,21 +73,21 @@ public class CategoryActivity extends AppCompatActivity  implements View.OnClick
 
     private void createCategoriesdata() {
         categoryNames = new HashMap<>();
-        categoryNames.put(R.id.btn_category1,"Beautiful Necklace Designs");
-        categoryNames.put(R.id.btn_category2,"Choker Necklace Designs");
-        categoryNames.put(R.id.btn_category3,"Diamond Necklace Designs");
-        categoryNames.put(R.id.btn_category4,"Gold Necklace Designs");
-        categoryNames.put(R.id.btn_category5,"Letter Necklace Designs");
-        categoryNames.put(R.id.btn_category6,"Women Necklace Designs");
+        categoryNames.put(R.id.btn_category1,"Bangle Bracelet Designs");
+        categoryNames.put(R.id.btn_category2,"Beads Bracelet Designs");
+        categoryNames.put(R.id.btn_category3,"Friendship Bracelet Designs");
+        categoryNames.put(R.id.btn_category4,"Gold Bracelet Designs");
+        categoryNames.put(R.id.btn_category5,"Rubber Bracelet Designs");
+        categoryNames.put(R.id.btn_category6,"Simple Bracelet Designs");
 //        categoryNames.put(R.id.btn_category7,"Women Necklace Designs");
 //        categoryNames.put(R.id.btn_category8,"Women Necklace Designs");
         categoryIds = new HashMap<>();
-        categoryIds.put(R.id.btn_category1,CategoryEnum.BEAUTIFUL.getValue());
-        categoryIds.put(R.id.btn_category2,CategoryEnum.CHOKER.getValue());
-        categoryIds.put(R.id.btn_category3,CategoryEnum.DIAMOND.getValue());
+        categoryIds.put(R.id.btn_category1,CategoryEnum.BANGLE.getValue());
+        categoryIds.put(R.id.btn_category2,CategoryEnum.BEADS.getValue());
+        categoryIds.put(R.id.btn_category3,CategoryEnum.FRIENDSHIP.getValue());
         categoryIds.put(R.id.btn_category4,CategoryEnum.GOLD.getValue());
-        categoryIds.put(R.id.btn_category5,CategoryEnum.LETTER.getValue());
-        categoryIds.put(R.id.btn_category6,CategoryEnum.WOMEN.getValue());
+        categoryIds.put(R.id.btn_category5,CategoryEnum.RUBBER.getValue());
+        categoryIds.put(R.id.btn_category6,CategoryEnum.SIMPLE.getValue());
 //        categoryIds.put(R.id.btn_category7,CategoryEnum.BEAUTIFUL.getValue());
 //        categoryIds.put(R.id.btn_category8,CategoryEnum.BEAUTIFUL.getValue());
     }
