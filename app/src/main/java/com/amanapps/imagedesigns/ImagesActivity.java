@@ -132,23 +132,17 @@ public class ImagesActivity extends AppCompatActivity {
     }
     List<AdView> adViewList;
     public List<String> getPosters(int category){
-        if(category == CategoryEnum.BEADS.getValue()){
-            return Demo.getPosters(mConfiguration.beads_url,mConfiguration.total_pictures);
+        if(category == CategoryEnum.HAND.getValue()){
+            return Demo.getPosters(mConfiguration.hand_url,mConfiguration.total_pictures);
         }
-        else if(category == CategoryEnum.FRIENDSHIP.getValue()){
-            return Demo.getPosters(mConfiguration.friendship_url,mConfiguration.total_pictures);
+        else if(category == CategoryEnum.BRIDAL.getValue()){
+            return Demo.getPosters(mConfiguration.bridal_url,mConfiguration.total_pictures);
         }
-        else if(category == CategoryEnum.BANGLE.getValue()){
-            return Demo.getPosters(mConfiguration.bangle_url,mConfiguration.total_pictures);
-        }
-        else if(category == CategoryEnum.GOLD.getValue()){
-            return Demo.getPosters(mConfiguration.gold_url,mConfiguration.total_pictures);
-        }
-        else if(category == CategoryEnum.RUBBER.getValue()){
-            return Demo.getPosters(mConfiguration.rubber_url,mConfiguration.total_pictures);
+        else if(category == CategoryEnum.FANCY.getValue()){
+            return Demo.getPosters(mConfiguration.fancy_url,mConfiguration.total_pictures);
         }
         else {
-            return Demo.getPosters(mConfiguration.simple_url,mConfiguration.total_pictures);
+            return Demo.getPosters(mConfiguration.indian_url,mConfiguration.total_pictures);
         }
     }
 
@@ -192,7 +186,7 @@ public class ImagesActivity extends AppCompatActivity {
         for (int i = 0; i < mConfiguration.total_pictures; i++) {
 
             SimpleDraweeView simpleDraweeView =new SimpleDraweeView(this);
-            simpleDraweeView.setBackgroundResource(R.drawable.ring_placeholder);
+            simpleDraweeView.setBackgroundResource(R.drawable.henna_placeholder);
             simpleDraweeView.setLayoutParams(lparams);
             this.layoutParent.addView(simpleDraweeView);
             AdRequest adRequestBanner;

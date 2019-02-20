@@ -25,10 +25,10 @@ public class CategoryActivity extends AppCompatActivity  implements View.OnClick
     Button buttonCategory2;
     Button buttonCategory3;
     Button buttonCategory4;
-    Button buttonCategory5;
-    Button buttonCategory6;
-    Button buttonCategory7;
-    Button buttonCategory8;
+//    Button buttonCategory5;
+//    Button buttonCategory6;
+//    Button buttonCategory7;
+//    Button buttonCategory8;
     HashMap<Integer,String> categoryNames;
     HashMap<Integer,Integer> categoryIds;
     @Override
@@ -46,8 +46,8 @@ public class CategoryActivity extends AppCompatActivity  implements View.OnClick
         buttonCategory2 = (Button) findViewById(R.id.btn_category2);
         buttonCategory3 = (Button) findViewById(R.id.btn_category3);
         buttonCategory4 = (Button) findViewById(R.id.btn_category4);
-        buttonCategory5 = (Button) findViewById(R.id.btn_category5);
-        buttonCategory6 = (Button) findViewById(R.id.btn_category6);
+//        buttonCategory5 = (Button) findViewById(R.id.btn_category5);
+//        buttonCategory6 = (Button) findViewById(R.id.btn_category6);
 //        buttonCategory7 = (Button) findViewById(R.id.btn_category7);
 //        buttonCategory8 = (Button) findViewById(R.id.btn_category8);
 
@@ -55,8 +55,8 @@ public class CategoryActivity extends AppCompatActivity  implements View.OnClick
         buttonCategory2.setText(categoryNames.get(R.id.btn_category2));
         buttonCategory3.setText(categoryNames.get(R.id.btn_category3));
         buttonCategory4.setText(categoryNames.get(R.id.btn_category4));
-        buttonCategory5.setText(categoryNames.get(R.id.btn_category5));
-        buttonCategory6.setText(categoryNames.get(R.id.btn_category6));
+//        buttonCategory5.setText(categoryNames.get(R.id.btn_category5));
+//        buttonCategory6.setText(categoryNames.get(R.id.btn_category6));
 //        buttonCategory7.setText(categoryNames.get(R.id.btn_category7));
 //        buttonCategory8.setText(categoryNames.get(R.id.btn_category8));
 
@@ -64,8 +64,8 @@ public class CategoryActivity extends AppCompatActivity  implements View.OnClick
         buttonCategory2.setOnClickListener(this);
         buttonCategory3.setOnClickListener(this);
         buttonCategory4.setOnClickListener(this);
-        buttonCategory5.setOnClickListener(this);
-        buttonCategory6.setOnClickListener(this);
+//        buttonCategory5.setOnClickListener(this);
+//        buttonCategory6.setOnClickListener(this);
 //        buttonCategory7.setOnClickListener(this);
 //        buttonCategory8.setOnClickListener(this);
 
@@ -73,21 +73,21 @@ public class CategoryActivity extends AppCompatActivity  implements View.OnClick
 
     private void createCategoriesdata() {
         categoryNames = new HashMap<>();
-        categoryNames.put(R.id.btn_category1,"Bangle Bracelet Designs");
-        categoryNames.put(R.id.btn_category2,"Beads Bracelet Designs");
-        categoryNames.put(R.id.btn_category3,"Friendship Bracelet Designs");
-        categoryNames.put(R.id.btn_category4,"Gold Bracelet Designs");
-        categoryNames.put(R.id.btn_category5,"Rubber Bracelet Designs");
-        categoryNames.put(R.id.btn_category6,"Simple Bracelet Designs");
+        categoryNames.put(R.id.btn_category1,"Fancy Mehandi Designs");
+        categoryNames.put(R.id.btn_category2,"Bridal Mehandi Designs");
+        categoryNames.put(R.id.btn_category3,"Indian Mehandi Designs");
+        categoryNames.put(R.id.btn_category4,"Hand Mehandi Designs");
+//        categoryNames.put(R.id.btn_category5,"Rubber Bracelet Designs");
+//        categoryNames.put(R.id.btn_category6,"Simple Bracelet Designs");
 //        categoryNames.put(R.id.btn_category7,"Women Necklace Designs");
 //        categoryNames.put(R.id.btn_category8,"Women Necklace Designs");
         categoryIds = new HashMap<>();
-        categoryIds.put(R.id.btn_category1,CategoryEnum.BANGLE.getValue());
-        categoryIds.put(R.id.btn_category2,CategoryEnum.BEADS.getValue());
-        categoryIds.put(R.id.btn_category3,CategoryEnum.FRIENDSHIP.getValue());
-        categoryIds.put(R.id.btn_category4,CategoryEnum.GOLD.getValue());
-        categoryIds.put(R.id.btn_category5,CategoryEnum.RUBBER.getValue());
-        categoryIds.put(R.id.btn_category6,CategoryEnum.SIMPLE.getValue());
+        categoryIds.put(R.id.btn_category1,CategoryEnum.FANCY.getValue());
+        categoryIds.put(R.id.btn_category2,CategoryEnum.BRIDAL.getValue());
+        categoryIds.put(R.id.btn_category3,CategoryEnum.INDIAN.getValue());
+        categoryIds.put(R.id.btn_category4,CategoryEnum.HAND.getValue());
+//        categoryIds.put(R.id.btn_category5,CategoryEnum.RUBBER.getValue());
+//        categoryIds.put(R.id.btn_category6,CategoryEnum.SIMPLE.getValue());
 //        categoryIds.put(R.id.btn_category7,CategoryEnum.BEAUTIFUL.getValue());
 //        categoryIds.put(R.id.btn_category8,CategoryEnum.BEAUTIFUL.getValue());
     }

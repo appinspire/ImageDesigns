@@ -7,10 +7,10 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="true"
-        android:icon="@drawable/bracelet"
+        android:icon="@drawable/henna_icon"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:roundIcon="@drawable/bracelet"
+        android:roundIcon="@drawable/henna_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity

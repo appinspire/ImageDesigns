@@ -14,10 +14,8 @@ public class Configuration {
     public int interval_ad;
     public int total_pictures;
 
-    public String bangle_url;
-    public String beads_url;
-    public String friendship_url;
-    public String gold_url;
-    public String rubber_url;
-    public String simple_url;
+    public String bridal_url;
+    public String fancy_url;
+    public String indian_url;
+    public String hand_url;
 }

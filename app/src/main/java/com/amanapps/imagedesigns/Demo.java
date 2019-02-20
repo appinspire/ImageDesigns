@@ -15,7 +15,7 @@ public final class Demo {
     public static List<String> getPosters(String base_url, int count) {
         List<String> imageList = new ArrayList<>();
         for(int i=0;i<count;i++){
-            imageList.add(base_url+"Design"+(i+1)+".jpg?alt=media");
+            imageList.add(base_url+"design"+(i+1)+".jpg?alt=media");
         }
         return imageList;
     }

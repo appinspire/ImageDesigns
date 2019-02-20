@@ -5,12 +5,10 @@ package com.amanapps.imagedesigns.enums;
  */
 
 public enum CategoryEnum {
-    BANGLE(1),
-    BEADS(2),
-    FRIENDSHIP(3),
-    GOLD(4),
-    RUBBER(5),
-    SIMPLE(6);
+    FANCY(1),
+    HAND(2),
+    INDIAN(3),
+    BRIDAL(4);
 
     private final int id;
 
